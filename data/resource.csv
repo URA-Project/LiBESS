@@ -1,4 +1,4 @@
-Unnamed: 0,date,Ah,BATTERY TYPE
+Unnamed: 0,date,capacity_ah,battery_type
 0,01/03/0002,49.32,ZSF
 1,01/03/0002,38.76,POW
 2,01/03/0002,64.72,NAJ
