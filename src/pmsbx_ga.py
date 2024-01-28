@@ -10,7 +10,12 @@ from chromosome import *
 
 
 def init_population(size_of_population):
-    pass
+    population = []
+    for i in range(size_of_population):
+        individual = CHROMOSOME_PMSBX_GA(get_data())
+        population.append(individual)
+    population = np.asarray(population)
+    return population
 
 
 """Select a sub-population for offspring production - PMSBX-GA"""
