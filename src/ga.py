@@ -4,13 +4,18 @@ import pandas as pd
 import random
 
 from chromosome import *
-
+from utils import *
 
 """Create population function - GA"""
 
 
 def init_population(size_of_population):
-    pass
+    population = []
+    for i in range(size_of_population):
+        individual = CHROMOSOME_GA(get_data())
+        population.append(individual)
+    population = np.asarray(population)
+    return population
 
 
 """Select a sub-population for offspring production - GA"""

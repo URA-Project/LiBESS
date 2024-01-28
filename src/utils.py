@@ -1,6 +1,6 @@
 from all_packages import *
 
-battery_type = {
+battery_type_bit = {
     "JSU": "000",
     "LEK": "001",
     "NAJ": "010",
