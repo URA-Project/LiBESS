@@ -28,15 +28,44 @@ def select_mating_pool(pop, num_parents_mating):
 """Crossover - GA"""
 
 
-def crossover(parents):
-    pass
+def crossover(parents, offspring_size):
+    # Initializes a numpy array offspring by copying the first half of the parents array. This will be used to store the child solutions
+    offspring = np.copy(parents[: parents.shape[0] // 2])
+    # The point at which crossover takes place between two parents, which in this case is at the center.
+    crossover_point = parents.shape[1] // 2
+    # Perform crossover
+    for k in range(0, offspring_size, 2):
+        # Index of the first parent to mate.
+        parent1_idx = k % parents.shape[0]
+        # Index of the second parent to mate.
+        parent2_idx = (k + 1) % parents.shape[0]
+        if k < len(offspring):
+            # The new offspring will have its first half of its genes taken from the first parent.
+            offspring[k, 0:crossover_point] = parents[parent1_idx, 0:crossover_point]
+            # The new offspring will have its second half of its genes taken from the second parent.
+            offspring[k, crossover_point:] = parents[parent2_idx, crossover_point:]
+    return offspring
 
 
 """Mutation - GA"""
 
 
-def mutation(parents, random_rate):
-    pass
+# Take every individual in the offspring after crossover to mutate with a given rate
+def mutation(offspring_crossover, random_rate):
+    # 0 and 1 are genes that can be used to replace the existing genes in the offspring solutions during the mutation operation.
+    geneSet = ["0", "1"]
+
+    for offspring in offspring_crossover:
+        for task in offspring:
+            # Random a rate and check if it's < given rate, then mutate it
+            rate = random.uniform(0, 1)
+            if rate < random_rate:
+                index = random.randrange(task.rfind("-") + 1, len(task))
+                newGene, alternate = random.sample(geneSet, 2)
+                mutate_gene = alternate if newGene == task[index] else newGene
+                task = task[:index] + mutate_gene + task[index + 1 :]
+
+    return offspring_crossover
 
 
 """Selecting a new population for the next generation from parents and offsprings - GA"""
