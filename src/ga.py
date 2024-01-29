@@ -22,7 +22,13 @@ def init_population(size_of_population):
 
 
 def select_mating_pool(pop, num_parents_mating):
-    pass
+    # shuffling the pop then select top of pops
+    pop = np.asarray(pop)
+    index = np.random.choice(pop.shape[0], num_parents_mating, replace=False)
+    random_individual = pop[index]
+    # split current pop into remain_pop and mating_pool
+    # pop = np.delete(pop, index)
+    return random_individual
 
 
 """Crossover - GA"""
