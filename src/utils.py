@@ -1,6 +1,8 @@
 import datetime
 import random
 from all_packages import *
+import numpy as np
+from collections import namedtuple
 
 battery_type_bit = {
     "JSU": "000",
@@ -109,3 +111,49 @@ def random_datetime(date_begin, date_end):
     result_datetime_string = result_datetime.strftime("%d/%m/%Y")
 
     return result_datetime_string
+
+# Sử dụng hàm để lấy số ngẫu nhiên từ 0 đến 1
+def generate_random_number():
+    return np.random.rand()
+
+def power_of_fraction(base, numerator, denominator):
+    # Ví dụ: tính 2^(1/3)
+    # base = 2
+    # numerator = 1
+    # denominator = 3
+    result = np.power(base, numerator / denominator)
+    return result
+
+# Định nghĩa namedtuple với tên là Result
+Result = namedtuple('Result', ['id', 'start_date', 'end_date', 'scheduled_date', 'routine', 'battery_type', 'num_battery'])
+
+def parser_gen_pmsbx(gen):
+    # Tách chuỗi bởi dấu "-"
+    result_list = gen.split('-')
+
+    # Gán giá trị tách ra từng biến riêng biệt
+    id = result_list[0]
+    start_date = result_list[1]
+    end_date = result_list[2]
+    scheduled_date = result_list[3]
+    routine = result_list[4]
+    battery_type = result_list[5]
+    num_battery = result_list[6]
+    # Trả về một đối tượng Result với các giá trị tương ứng
+    return Result(id, start_date, end_date, scheduled_date, routine, battery_type, num_battery)
+
+# Định nghĩa namedtuple với tên là vector để lưu giá trị của vector sau khi tính toán
+# v = (routine,(scheduled_date − start_date), battery_type, num_battery)
+Vector = namedtuple('Vector', ['routine', 'difference_date', 'battery_type', 'num_battery'])
+
+def scalar_multiply_v1(beta, vector_u1, vector_u2):
+    #v1_new = 0.5 × [(1 + β)υ1 + (1 − β)υ2]
+    vector_v1 = tuple(0.5 * ( (1 + beta) * u1 + (1 - beta) * u2) for u1, u2 in zip(vector_u1, vector_u2))
+    rounded_vector = tuple(int(round(element)) for element in vector_v1)
+    return Vector(*rounded_vector)
+
+def scalar_multiply_v2(beta, vector_u1, vector_u2):
+    #v2_new = 0.5 × [(1 - β)υ1 + (1 + β)υ2]
+    vector_v2 = tuple(0.5 * ( (1 - beta) * u1 + (1 + beta) * u2) for u1, u2 in zip(vector_u1, vector_u2))
+    rounded_vector = tuple(int(round(element)) for element in vector_v2)
+    return Vector(*rounded_vector)
