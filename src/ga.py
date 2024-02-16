@@ -77,5 +77,19 @@ def mutation(offspring_crossover, random_rate):
 """Selecting a new population for the next generation from parents and offsprings - GA"""
 
 
-def selection(parents, offsprings):
-    pass
+def selection(parents, offsprings):  # num individual = num parents
+    # Combine parents and offsprings
+    population = np.concatenate((parents, offsprings), axis=0)
+
+    # Calculate fitness for each individual in the population
+    fitness = np.array(
+        [individual.fitness for individual in population]
+    )  # individual.fitness = fitness(individual)
+
+    # Select the best individuals for the next generation
+    num_parents = parents.shape[0]  # parents.shape[0] = num_parents_mating
+    new_population = population[
+        fitness.argsort()[-num_parents:]
+    ]  # first n-largest fitness
+
+    return new_population
