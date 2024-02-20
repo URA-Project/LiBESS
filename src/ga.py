@@ -34,13 +34,13 @@ def select_mating_pool(pop, num_parents_mating):
 """Crossover - GA"""
 
 
-def crossover(parents, offspring_size):
+def crossover(parents):
     # Initializes a numpy array offspring by copying the first half of the parents array. This will be used to store the child solutions
     offspring = np.copy(parents[: parents.shape[0] // 2])
     # The point at which crossover takes place between two parents, which in this case is at the center.
     crossover_point = parents.shape[1] // 2
     # Perform crossover
-    for k in range(0, offspring_size, 2):
+    for k in range(0, parents.shape[0], 2):
         # Index of the first parent to mate.
         parent1_idx = k % parents.shape[0]
         # Index of the second parent to mate.

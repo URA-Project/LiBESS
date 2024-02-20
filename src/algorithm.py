@@ -1,4 +1,5 @@
 import ga
+import pmsbx_ga
 import random
 import numpy as np
 import pandas as pd
@@ -18,8 +19,17 @@ class GA_Algorithm:
         self.best_outputs = []
 
     def run_algorithm(self):
-        # Add the steps of running the GA algorithm.
-        pass
+        population = ga.init_population(self.popsize)
+        # Add code evalue fitnesss
+        for generation in range(self.num_generations):
+            # Selecting the best parents in the population for mating.
+            parents = ga.select_mating_pool(population, self.num_parents_mating)
+            # Crossover
+            offspring_crossover = ga.crossover(parents)
+            # Take every individual in the offspring after crossover to mutate with a given rate
+            offspring_mutation = ga.mutation(offspring_crossover)
+            # Selecting a new population for the next generation from parents and offsprings
+            population = ga.selection(parents, offspring_mutation)
 
 
 class PMSBX_GA_Algorithm:
@@ -35,4 +45,14 @@ class PMSBX_GA_Algorithm:
 
     def run_algorithm(self):
         # Add the steps of running the PMSBX-GA algorithm.
-        pass
+        population = pmsbx_ga.init_population(self.popsize)
+        # Add code evalue fitnesss
+        for generation in range(self.num_generations):
+            # Selecting the best parents in the population for mating.
+            parents = pmsbx_ga.select_mating_pool(population, self.num_parents_mating)
+            # Crossover
+            offspring_crossover = pmsbx_ga.crossover(parents)
+            # Take every individual in the offspring after crossover to mutate with a given rate
+            offspring_mutation = pmsbx_ga.mutation(offspring_crossover)
+            # Selecting a new population for the next generation from parents and offsprings
+            population = pmsbx_ga.selection(parents, offspring_mutation)
