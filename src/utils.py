@@ -159,6 +159,7 @@ def scalar_multiply_v2_crossover(beta, vector_u1, vector_u2):
     return Vector(*rounded_vector)
 
 def difference_date(date_1, date_2):
+    # date_1, date_2: string
     scheduled_date = datetime.datetime.strptime(date_1, date_format)
     start_date = datetime.datetime.strptime(date_2, date_format)
     difference = scheduled_date - start_date
