@@ -4,15 +4,42 @@ import pandas as pd
 import random
 
 from chromosome import *
+from conditions_pmsbx_ga import cal_fitness_value
 
 
 """Create population function - PMSBX-GA"""
 
+def _generate_parent(df):
+    genes = []
+    for supply_id, start_day, end_date, battery_type, d_estdur in zip(
+        df.supply_id,
+        df.start_day,
+        df.end_date,
+        df.battery_type,
+        df.d_estdur
+    ):
+        i = 0.5
+        while(i <= d_estdur):
+            rand_date = random_datetime(start_day, end_date)
+            routine = random.choice([0, 1])
+            battery_type_list = battery_type.split("|")
+            battery_type_gen = random.choice(battery_type_list)
+            battery_type_gen = battery_type_dec[battery_type_gen]
+
+            num_battery = random.randint(0, 10)
+            decstring = "-".join(
+                [rand_date, str(routine), str(battery_type_gen), str(num_battery)]
+            )
+            chromosome = "-".join([supply_id, start_day, end_date, decstring])
+            genes.append(chromosome)
+            i = i + 0.5
+    return genes
 
 def init_population(size_of_population):
     population = []
     for i in range(size_of_population):
-        individual = CHROMOSOME_PMSBX_GA(get_data())
+        # individual = CHROMOSOME_PMSBX_GA(get_data())
+        individual = _generate_parent(get_data())
         population.append(individual)
     population = np.asarray(population)
     return population
@@ -46,8 +73,8 @@ def crossover(parents, distribution_index):
         parent2_idx = (k + 1) % parents.shape[0]
         parent1 = parents[parent1_idx]
         parent2 = parents[parent2_idx]
-        chromosome_1 = parent1.chromosome
-        chromosome_2 = parent2.chromosome
+        chromosome_1 = parent1
+        chromosome_2 = parent2
         offspring_1 = []
         offspring_2 = []
         for task1, task2 in zip(chromosome_1, chromosome_2):
@@ -56,8 +83,10 @@ def crossover(parents, distribution_index):
             new_gen_1, new_gen_2 = crossover_calculation(
                 gen_1, gen_2, distribution_index
             )
-            offspring_1.append(new_gen_1)
-            offspring_2.append(new_gen_2)
+            new_gen_1_string = convert_to_string_format(new_gen_1, gen_1)
+            new_gen_2_string = convert_to_string_format(new_gen_2, gen_2)
+            offspring_1.append(new_gen_1_string)
+            offspring_2.append(new_gen_2_string)
 
         offspring.append(offspring_1)
         offspring.append(offspring_2)
@@ -66,18 +95,29 @@ def crossover(parents, distribution_index):
 
 """Mutation - PMSBX-GA"""
 
-
 def mutation(offspring, distribution_index):
     new_offspring = []
     for index in range(len(offspring)):
         chromosome = offspring[index]
         offspring_temp = []
-        for gen in range(len(chromosome)):
-            new_gen = mutation_calculation(chromosome[gen], distribution_index)
-            offspring_temp.append(new_gen)
+        for index_gene in range(len(chromosome)):
+            gene = parser_gen_pmsbx(chromosome[index_gene])
+            vector = mutation_calculation(gene, distribution_index)
+            new_gene_string = convert_to_string_format(vector,gene)
+            offspring_temp.append(new_gene_string)
         new_offspring.append(offspring_temp)
     return np.array(new_offspring)
 
+def convert_to_string_format(vector, gene):
+    # gene(id, start_date, end_date, scheduled_date, routine, battery_type, num_battery)
+    # v = (routine,(scheduled_date − start_date), battery_type, num_battery)
+    start_date = datetime.datetime.strptime(gene.start_date, date_format)
+    scheduled_date = datetime.timedelta(days=vector.difference_date) + start_date
+    scheduled_date_string = scheduled_date.strftime(date_format)
+
+    decstring = "-".join([scheduled_date_string, str(vector.routine), str(vector.battery_type), str(vector.num_battery)])
+    new_gene = "-".join([gene.id, gene.start_date, gene.end_date, decstring])
+    return new_gene
 
 def crossover_calculation(gen_1, gen_2, distribution_index):
     # Khoi tao bien group selected variables
@@ -153,9 +193,16 @@ def check_violations(candidate_1, candidate_2):
     return True
 
 
-def mutation_calculation(parents, distribution_index):
+def mutation_calculation(gene, distribution_index):
     # Khoi tao bien group selected variables
     # v = (routine,(scheduled_date − start_date), battery_type, num_battery)
+    diff_date_gen_1 = difference_date(gene.scheduled_date, gene.start_date)
+    vector = (
+        int(gene.routine),
+        diff_date_gen_1.days,
+        int(gene.battery_type),
+        int(gene.num_battery),
+        )
     delta_para = 0
     new_gen = (0, 0, 0, 0)
     # Generate a random number ε ∈ R, where 0 ≤ ε ≤ 1
@@ -166,8 +213,8 @@ def mutation_calculation(parents, distribution_index):
         delta_para = 1 - power_of_fraction(
             (2 - 2 * random_rate), 1, distribution_index + 1
         )
-    temp = Vector(*parents)
-    vector = (temp.routine, temp.difference_date, temp.battery_type, temp.num_battery)
+    # temp = Vector(*parents)
+    # vector = (temp.routine, temp.difference_date, temp.battery_type, temp.num_battery)
 
     new_gen = scalar_multiply_motation(vector, delta_para, random_rate)
     return new_gen
@@ -176,19 +223,18 @@ def mutation_calculation(parents, distribution_index):
 """Selecting a new population for the next generation from parents and offsprings - PMSBX-GA"""
 
 
-def selection(parents, offsprings):  # num individual = num parents
+def selection(parents, offsprings, HC_penalt_point, SC_penalt_point):  # num individual = num parents
     # Combine parents and offsprings
+    parents = np.asarray(parents)
     population = np.concatenate((parents, offsprings), axis=0)
 
     # Calculate fitness for each individual in the population
-    fitness = np.array(
-        [individual.fitness for individual in population]
-    )  # individual.fitness = fitness(individual)
+    fitness_array = cal_fitness_value(population, HC_penalt_point, SC_penalt_point)
 
     # Select the best individuals for the next generation
     num_parents = parents.shape[0]  # parents.shape[0] = num_parents_mating
     new_population = population[
-        fitness.argsort()[-num_parents:]
+        fitness_array.argsort()[-num_parents:]
     ]  # first n-largest fitness
 
     return new_population
