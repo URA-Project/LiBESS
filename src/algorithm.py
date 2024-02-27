@@ -1,3 +1,4 @@
+from conditions_pmsbx_ga import cal_fitness_value
 import ga
 import pmsbx_ga
 import random
@@ -8,15 +9,15 @@ import sys
 
 
 class GA_Algorithm:
-    def __init__(self, popsize, num_parents_mating, num_generations, mutation_rate):
+    def __init__(self, popsize, num_parents_mating, num_generations, mutation_rate, HC_penalt_point, SC_penalt_point):
         # Need to update
         self.popsize = popsize
         self.num_parents_mating = num_parents_mating
         self.num_generations = num_generations
         self.mutation_rate = mutation_rate
-        self.population = ga.createParent(self.sol_per_pop)
-        self.pop_size = self.population.shape
         self.best_outputs = []
+        self.HC_penalt_point = HC_penalt_point
+        self.SC_penalt_point = SC_penalt_point
 
     def run_algorithm(self):
         population = ga.init_population(self.popsize)
@@ -29,19 +30,19 @@ class GA_Algorithm:
             # Take every individual in the offspring after crossover to mutate with a given rate
             offspring_mutation = ga.mutation(offspring_crossover)
             # Selecting a new population for the next generation from parents and offsprings
-            population = ga.selection(parents, offspring_mutation)
+            population = ga.selection(parents, offspring_mutation, self.HC_penalt_point, self.SC_penalt_point)
 
 
 class PMSBX_GA_Algorithm:
-    def __init__(self, popsize, num_parents_mating, num_generations, mutation_rate):
+    def __init__(self, popsize, num_parents_mating, num_generations, distribution_index, HC_penalt_point, SC_penalt_point):
         # Need to update
         self.popsize = popsize
         self.num_parents_mating = num_parents_mating
         self.num_generations = num_generations
-        self.mutation_rate = mutation_rate
-        self.population = ga.createParent(self.sol_per_pop)
-        self.pop_size = self.population.shape
+        self.distribution_index = distribution_index
         self.best_outputs = []
+        self.HC_penalt_point = HC_penalt_point
+        self.SC_penalt_point = SC_penalt_point
 
     def run_algorithm(self):
         # Add the steps of running the PMSBX-GA algorithm.
@@ -51,8 +52,26 @@ class PMSBX_GA_Algorithm:
             # Selecting the best parents in the population for mating.
             parents = pmsbx_ga.select_mating_pool(population, self.num_parents_mating)
             # Crossover
-            offspring_crossover = pmsbx_ga.crossover(parents)
+            offspring_crossover = pmsbx_ga.crossover(parents, self.distribution_index)
             # Take every individual in the offspring after crossover to mutate with a given rate
-            offspring_mutation = pmsbx_ga.mutation(offspring_crossover)
+            offspring_mutation = pmsbx_ga.mutation(offspring_crossover, self.distribution_index)
             # Selecting a new population for the next generation from parents and offsprings
-            population = pmsbx_ga.selection(parents, offspring_mutation)
+            population = pmsbx_ga.selection(parents, offspring_mutation, self.HC_penalt_point, self.SC_penalt_point)
+
+def main():
+    # Các thông số của thuật toán
+    popsize = 50
+    num_parents_mating = 20
+    num_generations = 20,
+    distribution_index = 50
+    HC_penalt_point = 200
+    SC_penalt_point = 3
+
+    # Tạo một đối tượng PMSBX_GA_Algorithm
+    pmsbx_ga_algorithm = PMSBX_GA_Algorithm(popsize, num_parents_mating, num_generations, distribution_index, HC_penalt_point, SC_penalt_point)
+
+    # Chạy thuật toán
+    pmsbx_ga_algorithm.run_algorithm()
+
+if __name__ == "__main__":
+    main()

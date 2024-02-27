@@ -5,6 +5,7 @@ import random
 
 from chromosome import *
 from utils import *
+from conditions_ga import cal_fitness_value
 
 """Create population function - GA"""
 
@@ -77,19 +78,17 @@ def mutation(offspring_crossover, random_rate):
 """Selecting a new population for the next generation from parents and offsprings - GA"""
 
 
-def selection(parents, offsprings):  # num individual = num parents
+def selection(parents, offsprings, HC_penalt_point, SC_penalt_point):  # num individual = num parents
     # Combine parents and offsprings
     population = np.concatenate((parents, offsprings), axis=0)
 
     # Calculate fitness for each individual in the population
-    fitness = np.array(
-        [individual.fitness for individual in population]
-    )  # individual.fitness = fitness(individual)
+    fitness_array = cal_fitness_value(population, HC_penalt_point, SC_penalt_point)
 
     # Select the best individuals for the next generation
     num_parents = parents.shape[0]  # parents.shape[0] = num_parents_mating
     new_population = population[
-        fitness.argsort()[-num_parents:]
+        fitness_array.argsort()[-num_parents:]
     ]  # first n-largest fitness
 
     return new_population

@@ -13,11 +13,19 @@ battery_type_bit = {
 }
 
 battery_type_dec = {
-    "JSU": "0",
-    "LEK": "1",
-    "NAJ": "2",
-    "POW": "3",
-    "ZSF": "4",
+    "JSU": "1",
+    "LEK": "2",
+    "NAJ": "3",
+    "POW": "4",
+    "ZSF": "5",
+}
+
+battery_type_dec_convert = {
+    "1": "JSU",
+    "2": "LEK",
+    "3": "NAJ",
+    "4": "POW",
+    "5": "ZSF",
 }
 
 device = {
@@ -60,7 +68,7 @@ def access_row_by_wonum(supply_id):
     return data_frame.iloc[dict_supply_id[supply_id]]
 
 
-def get_resource(battery_type, date, capacity_ah):
+def get_resource(battery_type, date, device):
     resource_data = load_data(PATHS["resource"])
     date_unique = np.unique(resource_data.date.to_list()).astype(list)
     if date not in date_unique:
@@ -68,7 +76,7 @@ def get_resource(battery_type, date, capacity_ah):
     return resource_data[
         (resource_data["battery_type"] == battery_type)
         & (resource_data["date"] == date)
-    ][capacity_ah].item()
+    ][device].item()
 
 
 def get_data():

@@ -41,7 +41,9 @@ class CHROMOSOME_GA:
 
 """Create chromosome - PMSBX-GA"""
 
-
+# Hiện tại sử dụng def _generate_parent(df): thay cho CHROMOSOME_PMSBX_GA
+# Vì khởi tạo bằng class sẽ bị lỗi không khớp khi so sánh cấu trúc dữ liệu parents và offspring_mutation 
+# tại hàm pmsbx_ga.selection(parents, offspring_mutation)
 class CHROMOSOME_PMSBX_GA:
     def __init__(self, df):
         self.HC_resource = []
@@ -53,22 +55,26 @@ class CHROMOSOME_PMSBX_GA:
 
     def _generate_parent(self):
         genes = []
-        for supply_id, start_day, end_date, battery_type in zip(
+        for supply_id, start_day, end_date, battery_type, d_estdur in zip(
             self.df.supply_id,
             self.df.start_day,
             self.df.end_date,
             self.df.battery_type,
+            self.df.d_estdur
         ):
-            rand_date = random_datetime(start_day, end_date)
-            routine = random.choice([0, 1])
-            battery_type = battery_type.split("|")
-            battery_type_gen = random.choice(battery_type)
-            battery_type_gen = battery_type_dec[battery_type_gen]
+            i = 0.5
+            while(i <= d_estdur):
+                rand_date = random_datetime(start_day, end_date)
+                routine = random.choice([0, 1])
+                battery_type_list = battery_type.split("|")
+                battery_type_gen = random.choice(battery_type_list)
+                battery_type_gen = battery_type_dec[battery_type_gen]
 
-            num_battery = random.randint(0, 10)
-            decstring = "-".join(
-                [rand_date, str(routine), str(battery_type_gen), str(num_battery)]
-            )
-            chromosome = "-".join([supply_id, start_day, end_date, decstring])
-            genes.append(chromosome)
-        return np.asarray(genes)
+                num_battery = random.randint(0, 10)
+                decstring = "-".join(
+                    [rand_date, str(routine), str(battery_type_gen), str(num_battery)]
+                )
+                chromosome = "-".join([supply_id, start_day, end_date, decstring])
+                genes.append(chromosome)
+                i = i + 0.5
+        return genes
