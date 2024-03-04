@@ -3,8 +3,8 @@ import copy
 import pandas as pd
 import random
 
-from chromosome import *
-from conditions_pmsbx_ga import cal_fitness_value
+from src.chromosome import *
+from src.conditions_pmsbx_ga import cal_fitness_value
 
 
 """Create population function - PMSBX-GA"""

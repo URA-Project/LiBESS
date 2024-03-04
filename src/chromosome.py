@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from utils import *
+from src.utils import *
 
 """Create chromosome - GA"""
 
@@ -11,6 +11,8 @@ class CHROMOSOME_GA:
         self.HC_time = []
         self.df = df
         self.chromosome = self._generate_parent()
+
+
 
     # Generate random date
 
@@ -37,6 +39,9 @@ class CHROMOSOME_GA:
             chromosome = "-".join([supply_id, start_day, end_date, bitstring])
             genes.append(chromosome)
         return np.asarray(genes)
+
+
+
 
 
 """Create chromosome - PMSBX-GA"""

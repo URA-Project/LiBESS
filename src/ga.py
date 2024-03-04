@@ -3,9 +3,11 @@ import copy
 import pandas as pd
 import random
 
-from chromosome import *
-from utils import *
-from conditions_ga import cal_fitness_value
+from src.chromosome import *
+from src.pmsbx_ga import _generate_parent
+from src.utils import *
+from src.conditions_ga import cal_fitness_value
+from src.draw_chart import draw_fitness
 
 """Create population function - GA"""
 
@@ -13,7 +15,7 @@ from conditions_ga import cal_fitness_value
 def init_population(size_of_population):
     population = []
     for i in range(size_of_population):
-        individual = CHROMOSOME_GA(get_data())
+        individual = _generate_parent(get_data())
         population.append(individual)
     population = np.asarray(population)
     return population
@@ -35,23 +37,33 @@ def select_mating_pool(pop, num_parents_mating):
 """Crossover - GA"""
 
 
+import numpy as np
+
 def crossover(parents):
-    # Initializes a numpy array offspring by copying the first half of the parents array. This will be used to store the child solutions
-    offspring = np.copy(parents[: parents.shape[0] // 2])
+    # Đảm bảo rằng parents là một mảng 2D
+    if parents.ndim == 1:
+        parents = np.expand_dims(parents, axis=0)
+
+    # Initializes a numpy array offspring by copying the first half of the parents array.
+    offspring = np.copy(parents[:parents.shape[0] // 2])
+
     # The point at which crossover takes place between two parents, which in this case is at the center.
     crossover_point = parents.shape[1] // 2
+
     # Perform crossover
-    for k in range(0, parents.shape[0], 2):
+    for k in range(offspring.shape[0]):
         # Index of the first parent to mate.
         parent1_idx = k % parents.shape[0]
         # Index of the second parent to mate.
         parent2_idx = (k + 1) % parents.shape[0]
-        if k < len(offspring):
-            # The new offspring will have its first half of its genes taken from the first parent.
-            offspring[k, 0:crossover_point] = parents[parent1_idx, 0:crossover_point]
-            # The new offspring will have its second half of its genes taken from the second parent.
-            offspring[k, crossover_point:] = parents[parent2_idx, crossover_point:]
+
+        # The new offspring will have its first half of its genes taken from the first parent.
+        offspring[k, :crossover_point] = parents[parent1_idx, :crossover_point]
+        # The new offspring will have its second half of its genes taken from the second parent.
+        offspring[k, crossover_point:] = parents[parent2_idx, crossover_point:]
+
     return offspring
+
 
 
 """Mutation - GA"""
@@ -80,6 +92,14 @@ def mutation(offspring_crossover, random_rate):
 
 def selection(parents, offsprings, HC_penalt_point, SC_penalt_point):  # num individual = num parents
     # Combine parents and offsprings
+    if parents.ndim == 1:
+        parents = np.expand_dims(parents, axis=0)
+
+        # Ensure offsprings is 2D
+    if offsprings.ndim == 1:
+        offsprings = np.expand_dims(offsprings, axis=0)
+
+        # Now, concatenate should work as both arrays are 2D
     population = np.concatenate((parents, offsprings), axis=0)
 
     # Calculate fitness for each individual in the population
@@ -90,5 +110,6 @@ def selection(parents, offsprings, HC_penalt_point, SC_penalt_point):  # num ind
     new_population = population[
         fitness_array.argsort()[-num_parents:]
     ]  # first n-largest fitness
-
     return new_population
+
+
