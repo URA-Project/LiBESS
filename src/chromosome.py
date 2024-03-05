@@ -39,7 +39,6 @@ class CHROMOSOME_GA:
         return np.asarray(genes)
 
 
-
 """Create chromosome - PMSBX-GA"""
 
 # Hiện tại sử dụng def _generate_parent(df): thay cho CHROMOSOME_PMSBX_GA
