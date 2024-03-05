@@ -1,7 +1,32 @@
-from utils import*
+from src.utils import*
 
 def hard_constraint_1(chromosome):
     HC1_count = 0
+    BATDAY = dict()
+    for gen in chromosome:
+        # gen_parser = "id","start_date","end_date","scheduled_date","routine","battery_type","num_battery"
+        gen_parser = parser_gen_pmsbx(gen)
+        ###Decode Setup###
+        battery_type = access_row_by_wonum(gen_parser.id)["battery_type"]
+        battery_type_list = battery_type.split("|")
+        check_battery_type = battery_type_dec_convert[gen_parser.battery_type] in battery_type_list
+        # Kiểm tra battery_type của gene hiện tại có nằm trong danh sách của battery_type của id đó trong file data không
+        if (check_battery_type == False):
+            HC1_count += 1
+            continue
+        device = access_row_by_wonum(gen_parser.id)["device_type"]
+        tup_temp = (battery_type_dec_convert[gen_parser.battery_type], gen_parser.scheduled_date, device)
+        BATDAY[tup_temp] = BATDAY.get(tup_temp, 0) + 0.5
+
+    for key, value in BATDAY.items():
+        bat_type, date, device = key
+        data_resource_value = get_resource(bat_type, date, device)
+        # Chuyen value (đang đơn vị là day) thành ngày theo công thức 1 day = 10KAh
+        value_KAh = value * 10
+        if data_resource_value == -1:  # gen date with date not in resouce
+            HC1_count += 1
+        elif data_resource_value < value_KAh:
+            HC1_count += 1
     return HC1_count
 
 
@@ -9,12 +34,48 @@ def hard_constraint_2(chromosome):
     #Ở một thời điểm, mỗi thiết bị chỉ được cung cấp năng lượng bởi 1 pin mà thôi
     #(không có 2 pin cùng cung cấp năng lượng cho 1 máy)
     HC2_count = 0
+    parsed_genes = [parser_gen_pmsbx(gene) for gene in chromosome]
+    device_types = {gene.id: access_row_by_wonum(gene.id)["device_type"] for gene in parsed_genes}
+
+    num_genes = len(parsed_genes)
+
+    for i in range(num_genes):
+        for j in range(i + 1, num_genes):
+            gen_parser = parsed_genes[i]
+            temporary_gene_parser = parsed_genes[j]
+
+            if (
+                gen_parser.scheduled_date == temporary_gene_parser.scheduled_date
+                and gen_parser.routine == temporary_gene_parser.routine
+                and device_types[gen_parser.id] == device_types[temporary_gene_parser.id]
+                and gen_parser.battery_type != temporary_gene_parser.battery_type
+            ):
+                HC2_count += 1
+
     return HC2_count
 
 
 def hard_constraint_3(chromosome):
     # Ở một thời điểm, một pin không cung cấp năng lượng cho 2 thiết bị khác nhau.
     HC3_count = 0
+    parsed_genes = [parser_gen_pmsbx(gene) for gene in chromosome]
+    device_types = {gene.id: access_row_by_wonum(gene.id)["device_type"] for gene in parsed_genes}
+
+    num_genes = len(parsed_genes)
+
+    for i in range(num_genes):
+        for j in range(i + 1, num_genes):
+            gen_parser = parsed_genes[i]
+            temporary_gene_parser = parsed_genes[j]
+
+            if (
+                gen_parser.scheduled_date == temporary_gene_parser.scheduled_date
+                and gen_parser.routine == temporary_gene_parser.routine
+                and device_types[gen_parser.id] != device_types[temporary_gene_parser.id]
+                and gen_parser.battery_type == temporary_gene_parser.battery_type
+            ):
+                HC3_count += 1
+
     return HC3_count
 
 def soft_constraint_1(chromosome):
@@ -68,7 +129,6 @@ def cal_fitness_value(population, HC_penalt_point, SC_penalt_point):
         fitness.append(fitness_value)
         HC_count_print.append(HC_count)
         SC_count_print.append(SC_count)
-    print("HC_count_print", HC_count_print)
-    print("SC_count_print",SC_count_print)
+
     fitness = np.asarray(fitness)
     return fitness

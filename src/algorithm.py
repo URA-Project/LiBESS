@@ -1,6 +1,7 @@
-from conditions_pmsbx_ga import cal_fitness_value
-import ga
-import pmsbx_ga
+from src import ga, pmsbx_ga
+from src.conditions_pmsbx_ga import cal_fitness_value
+import src.ga
+import src.pmsbx_ga
 import random
 import numpy as np
 import pandas as pd
@@ -28,7 +29,7 @@ class GA_Algorithm:
             # Crossover
             offspring_crossover = ga.crossover(parents)
             # Take every individual in the offspring after crossover to mutate with a given rate
-            offspring_mutation = ga.mutation(offspring_crossover)
+            offspring_mutation = ga.mutation(offspring_crossover, random_rate=0.5)
             # Selecting a new population for the next generation from parents and offsprings
             population = ga.selection(parents, offspring_mutation, self.HC_penalt_point, self.SC_penalt_point)
 

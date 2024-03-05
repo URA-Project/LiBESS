@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from utils import *
+from src.utils import *
 
 """Create chromosome - GA"""
 

@@ -1,6 +1,6 @@
 import datetime
 import random
-from all_packages import *
+from src.all_packages import *
 import numpy as np
 from collections import namedtuple
 
