@@ -12,8 +12,6 @@ class CHROMOSOME_GA:
         self.df = df
         self.chromosome = self._generate_parent()
 
-
-
     # Generate random date
 
     def _generate_parent(self):
@@ -39,8 +37,6 @@ class CHROMOSOME_GA:
             chromosome = "-".join([supply_id, start_day, end_date, bitstring])
             genes.append(chromosome)
         return np.asarray(genes)
-
-
 
 
 
