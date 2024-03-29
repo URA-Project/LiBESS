@@ -120,9 +120,11 @@ def random_datetime(date_begin, date_end):
 
     return result_datetime_string
 
+
 # Sử dụng hàm để lấy số ngẫu nhiên từ 0 đến 1
 def generate_random_number():
     return np.random.rand()
+
 
 def power_of_fraction(base, numerator, denominator):
     # Ví dụ: tính 2^(1/3)
@@ -132,12 +134,25 @@ def power_of_fraction(base, numerator, denominator):
     result = np.power(base, numerator / denominator)
     return result
 
+
 # Định nghĩa namedtuple với tên là Result
-Gen_structure = namedtuple('Gen_structure', ['id', 'start_date', 'end_date', 'scheduled_date', 'routine', 'battery_type', 'num_battery'])
+Gen_structure = namedtuple(
+    "Gen_structure",
+    [
+        "id",
+        "start_date",
+        "end_date",
+        "scheduled_date",
+        "routine",
+        "battery_type",
+        "num_battery",
+    ],
+)
+
 
 def parser_gen_pmsbx(gen):
     # Tách chuỗi bởi dấu "-"
-    result_list = gen.split('-')
+    result_list = gen.split("-")
 
     # Gán giá trị tách ra từng biến riêng biệt
     id = result_list[0]
@@ -148,23 +163,37 @@ def parser_gen_pmsbx(gen):
     battery_type = result_list[5]
     num_battery = result_list[6]
     # Trả về một đối tượng Result với các giá trị tương ứng
-    return Gen_structure(id, start_date, end_date, scheduled_date, routine, battery_type, num_battery)
+    return Gen_structure(
+        id, start_date, end_date, scheduled_date, routine, battery_type, num_battery
+    )
+
 
 # Định nghĩa namedtuple với tên là vector để lưu giá trị của vector sau khi tính toán
 # v = (routine,(scheduled_date − start_date), battery_type, num_battery)
-Vector = namedtuple('Vector', ['routine', 'difference_date', 'battery_type', 'num_battery'])
+Vector = namedtuple(
+    "Vector", ["routine", "difference_date", "battery_type", "num_battery"]
+)
+
 
 def scalar_multiply_v1_crossover(beta, vector_u1, vector_u2):
-    #v1_new = 0.5 × [(1 + β)υ1 + (1 − β)υ2]
-    vector_v1 = tuple(0.5 * ( (1 + beta) * u1 + (1 - beta) * u2) for u1, u2 in zip(vector_u1, vector_u2))
+    # v1_new = 0.5 × [(1 + β)υ1 + (1 − β)υ2]
+    vector_v1 = tuple(
+        0.5 * ((1 + beta) * u1 + (1 - beta) * u2)
+        for u1, u2 in zip(vector_u1, vector_u2)
+    )
     rounded_vector = tuple(int(round(element)) for element in vector_v1)
     return Vector(*rounded_vector)
 
+
 def scalar_multiply_v2_crossover(beta, vector_u1, vector_u2):
-    #v2_new = 0.5 × [(1 - β)υ1 + (1 + β)υ2]
-    vector_v2 = tuple(0.5 * ( (1 - beta) * u1 + (1 + beta) * u2) for u1, u2 in zip(vector_u1, vector_u2))
+    # v2_new = 0.5 × [(1 - β)υ1 + (1 + β)υ2]
+    vector_v2 = tuple(
+        0.5 * ((1 - beta) * u1 + (1 + beta) * u2)
+        for u1, u2 in zip(vector_u1, vector_u2)
+    )
     rounded_vector = tuple(int(round(element)) for element in vector_v2)
     return Vector(*rounded_vector)
+
 
 def difference_date(date_1, date_2):
     # date_1, date_2: string
@@ -173,19 +202,29 @@ def difference_date(date_1, date_2):
     difference = scheduled_date - start_date
     return difference
 
-def scalar_multiply_motation(vector, delta, epsilon ):
-    new_vector = (0,0,0,0)
+
+def scalar_multiply_motation(vector, delta, epsilon):
+    new_vector = (0, 0, 0, 0)
     # ['routine', 'difference_date', 'battery_type', 'num_battery']
-    random_routine = random.randint(0,1)
-    random_diff_date = random.randint(0,30)
-    random_battery_type = random.randint(1,5)
-    random_num_battery = random.randint(1,10)
-    vector_random = (random_routine,random_diff_date,random_battery_type,random_num_battery)
-    if epsilon <= 0.5 :
-        #v_new = v + δ × [υ − (a1, a2, a3, a4)] for ε ≤ 0.5
-        new_vector = tuple( u1 + delta * (u1 - u2) for u1, u2 in zip(vector, vector_random))
-    else :
-        #v_new = v + δ × [(a1, a2, a3, a4) - υ] for ε ≤ 0.5
-        new_vector = tuple( u1 + delta * (u2 - u1) for u1, u2 in zip(vector, vector_random))
+    random_routine = random.randint(0, 1)
+    random_diff_date = random.randint(0, 30)
+    random_battery_type = random.randint(1, 5)
+    random_num_battery = random.randint(1, 10)
+    vector_random = (
+        random_routine,
+        random_diff_date,
+        random_battery_type,
+        random_num_battery,
+    )
+    if epsilon <= 0.5:
+        # v_new = v + δ × [υ − (a1, a2, a3, a4)] for ε ≤ 0.5
+        new_vector = tuple(
+            u1 + delta * (u1 - u2) for u1, u2 in zip(vector, vector_random)
+        )
+    else:
+        # v_new = v + δ × [(a1, a2, a3, a4) - υ] for ε ≤ 0.5
+        new_vector = tuple(
+            u1 + delta * (u2 - u1) for u1, u2 in zip(vector, vector_random)
+        )
     rounded_vector = tuple(int(round(element)) for element in new_vector)
     return Vector(*rounded_vector)

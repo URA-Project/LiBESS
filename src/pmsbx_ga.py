@@ -9,17 +9,14 @@ from src.conditions_pmsbx_ga import cal_fitness_value
 
 """Create population function - PMSBX-GA"""
 
+
 def _generate_parent(df):
     genes = []
     for supply_id, start_day, end_date, battery_type, d_estdur in zip(
-        df.supply_id,
-        df.start_day,
-        df.end_date,
-        df.battery_type,
-        df.d_estdur
+        df.supply_id, df.start_day, df.end_date, df.battery_type, df.d_estdur
     ):
         i = 0.5
-        while(i <= d_estdur):
+        while i <= d_estdur:
             rand_date = random_datetime(start_day, end_date)
             routine = random.choice([0, 1])
             battery_type_list = battery_type.split("|")
@@ -34,6 +31,7 @@ def _generate_parent(df):
             genes.append(chromosome)
             i = i + 0.5
     return genes
+
 
 def init_population(size_of_population):
     population = []
@@ -95,6 +93,7 @@ def crossover(parents, distribution_index):
 
 """Mutation - PMSBX-GA"""
 
+
 def mutation(offspring, distribution_index):
     new_offspring = []
     for index in range(len(offspring)):
@@ -103,10 +102,11 @@ def mutation(offspring, distribution_index):
         for index_gene in range(len(chromosome)):
             gene = parser_gen_pmsbx(chromosome[index_gene])
             vector = mutation_calculation(gene, distribution_index)
-            new_gene_string = convert_to_string_format(vector,gene)
+            new_gene_string = convert_to_string_format(vector, gene)
             offspring_temp.append(new_gene_string)
         new_offspring.append(offspring_temp)
     return np.array(new_offspring)
+
 
 def convert_to_string_format(vector, gene):
     # gene(id, start_date, end_date, scheduled_date, routine, battery_type, num_battery)
@@ -115,9 +115,17 @@ def convert_to_string_format(vector, gene):
     scheduled_date = datetime.timedelta(days=vector.difference_date) + start_date
     scheduled_date_string = scheduled_date.strftime(date_format)
 
-    decstring = "-".join([scheduled_date_string, str(vector.routine), str(vector.battery_type), str(vector.num_battery)])
+    decstring = "-".join(
+        [
+            scheduled_date_string,
+            str(vector.routine),
+            str(vector.battery_type),
+            str(vector.num_battery),
+        ]
+    )
     new_gene = "-".join([gene.id, gene.start_date, gene.end_date, decstring])
     return new_gene
+
 
 def crossover_calculation(gen_1, gen_2, distribution_index):
     # Khoi tao bien group selected variables
@@ -202,7 +210,7 @@ def mutation_calculation(gene, distribution_index):
         diff_date_gen_1.days,
         int(gene.battery_type),
         int(gene.num_battery),
-        )
+    )
     delta_para = 0
     new_gen = (0, 0, 0, 0)
     # Generate a random number ε ∈ R, where 0 ≤ ε ≤ 1
@@ -223,7 +231,9 @@ def mutation_calculation(gene, distribution_index):
 """Selecting a new population for the next generation from parents and offsprings - PMSBX-GA"""
 
 
-def selection(parents, offsprings, HC_penalt_point, SC_penalt_point):  # num individual = num parents
+def selection(
+    parents, offsprings, HC_penalt_point, SC_penalt_point
+):  # num individual = num parents
     # Combine parents and offsprings
     parents = np.asarray(parents)
     population = np.concatenate((parents, offsprings), axis=0)
