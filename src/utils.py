@@ -3,6 +3,8 @@ import random
 from src.all_packages import *
 import numpy as np
 from collections import namedtuple
+import pandas as pd
+import os.path as osp
 
 battery_type_bit = {
     "JSU": "000",
@@ -10,6 +12,20 @@ battery_type_bit = {
     "NAJ": "010",
     "POW": "011",
     "ZSF": "100",
+    "NAJ": "101",
+    "POW": "111",
+    "ZSF": "110",
+}
+
+battery_type_bit_convert = {
+    "000": "JSU",
+    "001": "LEK",
+    "010": "NAJ",
+    "011": "POW",
+    "100": "ZSF",
+    "101": "NAJ",
+    "111": "POW",
+    "110": "ZSF",
 }
 
 battery_type_dec = {
@@ -163,6 +179,37 @@ def parser_gen_pmsbx(gen):
     battery_type = result_list[5]
     num_battery = result_list[6]
     # Trả về một đối tượng Result với các giá trị tương ứng
+    return Gen_structure(
+        id, start_date, end_date, scheduled_date, routine, battery_type, num_battery
+    )
+
+
+def decode_datetime(bit):
+    date = int(bit[:5], 2)
+    if date == 0:
+        date += 1
+    month = int(bit[5:-2], 2)
+    year = int(bit[-2:], 2)
+
+    return f"{date}/{month}/000{year}"
+
+
+def parser_gen_ga(gen):
+    # Tách chuỗi bởi dấu "-"
+    result_list = gen.split("-")
+
+    # Gán giá trị tách ra từng biến riêng biệt
+    id = result_list[0]
+    start_date = result_list[1]
+    end_date = result_list[2]
+
+    bit_string = result_list[3]
+    scheduled_date = decode_datetime(bit_string[:11])
+    routine = int(bit_string[11:12], 2)
+    type_bit = bit_string[12:15]
+    battery_type = battery_type_bit_convert[type_bit]
+    num_battery = int(bit_string[15:], 2)
+
     return Gen_structure(
         id, start_date, end_date, scheduled_date, routine, battery_type, num_battery
     )
