@@ -9,31 +9,20 @@ from src.utils import *
 from src.conditions_ga import cal_fitness_value
 from src.utils import _cal_end_date
 
-# bit_dict_team
-# ======================MODIFY======================
-bit_dict_team = {
-    "000": "MECH",
-    "001": "PROD",
-    "010": "E&I",
-    "011": "RES",
-    "100": "RES"
-}
+# # bit_dict_team
+# # ======================MODIFY======================
+# bit_dict_team = {
+#     "000": "MECH",
+#     "001": "PROD",
+#     "010": "E&I",
+#     "011": "RES",
+#     "100": "RES"
+# }
 # ======================MODIFY======================
 
-# Get resource
-resource_path = "/Users/vinhvu/NSGA-II-POC-main/NSGA-II-POC-main/code/data/resource.csv"
-resource_data = pd.read_csv(resource_path)
-
-date_unique = np.unique(resource_data.date.to_list()).astype(list)
 
 # Preprocessing WONUM_data
-data_path = "/Users/vinhvu/NSGA-II-POC-main/NSGA-II-POC-main/code/data/data.csv"
-data = pd.read_csv(data_path)
-
-data = data.drop('Unnamed: 0', axis=1)
-data = data[data.site != 'Not Defined']
-data = data.dropna().reset_index(drop=True)
-dict_wonum = {x: y for x, y in zip(data.wonum, data.index)}
+dict_wonum = {x: y for x, y in zip(pre_process_data().wonum, pre_process_data().index)}
 
 """Create population function - NSGA"""
 
@@ -178,7 +167,6 @@ def non_dominated_sorting(population_size, chroms_obj_record):
 
 '''--------calculate crowding distance function---------'''
 
-
 def calculate_crowding_distance(front, chroms_obj_record):
     distance = {m: 0 for m in front}
     # o is objective function's values, i.e: HC_time, HC_resourec. chromosome_obj_record={chromosome:[HC_time,HC_record]}
@@ -244,7 +232,7 @@ def fitness_value(chromosome, error_output=False):  # fitness function
         num_people = bit_string[-5:-3]
         # ===================MODIFY==================
         team_bit = bit_string[-3:]
-        team = bit_dict_team[team_bit]
+        team = bit_battery_type[team_bit]
         # ===================MODIFY==================
         # access from dataframe
         est_dur = access_row_by_wonum(wonum)['r_estdur']

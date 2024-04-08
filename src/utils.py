@@ -12,6 +12,14 @@ battery_type_bit = {
     "ZSF": "100",
 }
 
+bit_battery_type = {
+    "000": "JSU",
+    "001": "LEK",
+    "010": "NAJ",
+    "011": "POW",
+    "100": "ZSF",
+}
+
 battery_type_dec = {
     "JSU": "1",
     "LEK": "2",
