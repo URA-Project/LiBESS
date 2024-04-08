@@ -19,11 +19,6 @@ from src.utils import _cal_end_date
 #     "100": "RES"
 # }
 # ======================MODIFY======================
-
-
-# Preprocessing WONUM_data
-dict_wonum = {x: y for x, y in zip(pre_process_data().wonum, pre_process_data().index)}
-
 """Create population function - NSGA"""
 
 def init_population(size_of_population):
@@ -235,7 +230,7 @@ def fitness_value(chromosome, error_output=False):  # fitness function
         team = bit_battery_type[team_bit]
         # ===================MODIFY==================
         # access from dataframe
-        est_dur = access_row_by_wonum(wonum)['r_estdur']
+        est_dur = access_row_by_wonum(wonum)['d_estdur']
         site = access_row_by_wonum(wonum)['site']
         # resouce modify
         # ==================MODIFY===================
