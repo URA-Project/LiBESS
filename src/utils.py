@@ -83,6 +83,33 @@ def get_data():
     return data_frame
 
 
+#Cal end date NSGA
+def _cal_end_date(date_begin, shift, est_dur, num_people):
+    est_dur = est_dur * num_people
+    after_shift = shift == 1 or int(est_dur) != est_dur
+    if shift == 1 and int(est_dur) != est_dur:
+        after_shift = 0
+        est_dur += 1
+    dt_end = datetime.datetime.strptime(date_begin, '%d/%m/%Y') + datetime.timedelta(days=int(est_dur))
+
+    return dt_end, after_shift
+
+def decode_datetime(bit):
+    date = int(bit[:5], 2)
+    month = int(bit[5:-2], 2)
+    year = int(bit[-2:], 2)
+
+    return f"{date}/{month}/000{year}"
+
+def point_duration(duration):
+    if duration > 0:
+        return 1
+    return 0
+
+def convert_datetime_to_string(dt):
+    # return dt.strftime("%d/%m/%Y")[:-1] + '000' + dt.strftime("%d/%m/%Y")[-1:]
+    return dt.strftime("%d/%m/%Y")[:-1] + dt.strftime("%d/%m/%Y")[-1:]
+
 def _str_time_prop(start, end, time_format, prop):
     stime = datetime.datetime.strptime(start, time_format)
     etime = datetime.datetime.strptime(end, time_format)
