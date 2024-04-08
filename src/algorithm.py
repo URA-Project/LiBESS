@@ -1,14 +1,9 @@
 import copy
 
-from src import ga, pmsbx_ga, nsga
-from src.conditions_pmsbx_ga import cal_fitness_value
-import src.ga
-import src.pmsbx_ga
-import random
+from src.NSGA import nsga
+from src.PMSBX_GA import pmsbx_ga
+from src.GA import ga
 import numpy as np
-import pandas as pd
-import statistics
-import sys
 
 
 class GA_Algorithm:

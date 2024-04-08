@@ -1,4 +1,4 @@
-from src.utils import *
+from src.utilities.utils import *
 
 def hard_constraint_1(chromosome):
     HC1_count = 0

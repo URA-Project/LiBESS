@@ -1,10 +1,5 @@
-import datetime
-import copy
-import pandas as pd
-import random
-
 from src.chromosome import *
-from src.conditions_pmsbx_ga import cal_fitness_value
+from src.PMSBX_GA.conditions_pmsbx_ga import cal_fitness_value
 
 
 """Create population function - PMSBX-GA"""
