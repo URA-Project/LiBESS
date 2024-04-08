@@ -14,6 +14,31 @@ from src.utilities.utils import _cal_end_date
 #     "100": "RES"
 # }
 # ======================MODIFY======================
+def _generate_parent(df):
+    genes = []
+    # for supply_id, start_day, end_date, battery_type in zip(
+    #     self.df.supply_id,
+    #     self.df.start_day,
+    #     self.df.end_date,
+    #     self.df.battery_type,
+    # ):
+    for supply_id, start_day, end_date, battery_type, d_estdur in zip(
+        df.supply_id, df.start_day, df.end_date, df.battery_type, df.d_estdur
+    ):
+        rand_date = random_date_bit(start_day, end_date, random.random())
+        routine = random.choice([0, 1])
+        battery_type = battery_type.split("|")
+        battery_type_gen = random.choice(battery_type)
+        battery_type_gen = battery_type_bit[battery_type_gen]
+
+        random_num_battery = random.randint(0, 10)
+        # Chuyển số nguyên sang số nhị phân
+        num_battery = format(random_num_battery, "04b")
+        bitstring = "".join([rand_date, str(routine), battery_type_gen, num_battery])
+        chromosome = "-".join([supply_id, start_day, end_date, bitstring])
+        genes.append(chromosome)
+    return np.asarray(genes)
+
 """Create population function - NSGA"""
 
 def init_population(size_of_population):
@@ -222,7 +247,7 @@ def fitness_value(chromosome, error_output=False):  # fitness function
         num_people = bit_string[-5:-3]
         # ===================MODIFY==================
         team_bit = bit_string[-3:]
-        team = bit_battery_type[team_bit]
+        team = battery_type_bit_convert[team_bit]
         # ===================MODIFY==================
         # access from dataframe
         est_dur = access_row_by_wonum(wonum)['d_estdur']

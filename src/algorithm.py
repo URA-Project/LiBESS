@@ -83,11 +83,20 @@ class PMSBX_GA_Algorithm:
 
 
 class NSGA_ALGORITHM:
-    def __init__(self, popsize, num_parents_mating, num_generations, HC_penalt_point, SC_penalt_point):
+    def __init__(
+            self,
+            popsize,
+            num_parents_mating,
+            num_generations,
+            mutation_rate,
+            HC_penalt_point,
+            SC_penalt_point,
+    ):
         # Need to update
         self.popsize = popsize
         self.num_parents_mating = num_parents_mating
         self.num_generations = num_generations
+        self.mutation_rate = mutation_rate
         self.best_outputs = []
         self.HC_penalt_point = HC_penalt_point
         self.SC_penalt_point = SC_penalt_point
@@ -103,12 +112,13 @@ class NSGA_ALGORITHM:
             # Crossover
             offspring_crossover = nsga.crossover(parents)
             # Take every individual in the offspring after crossover to mutate with a given rate
-            offspring_mutation = nsga.mutation(offspring_crossover)
+            offspring_mutation = nsga.mutation(population, self.mutation_rate)
             chroms_obj_record = {}  # record each chromosome objective values as chromosome_obj_record={chromosome:[HC_time,HC_record]}
 
             total_chromosome = np.concatenate((copy.deepcopy(parents), copy.deepcopy(
                 offspring_crossover), copy.deepcopy(population), copy.deepcopy(
                 offspring_mutation)))  # combine parent and offspring chromosomes
+
             for m in range(self.popsize * 2):
                 HC_time, HC_resource = nsga.fitness_value(total_chromosome[m])
                 chroms_obj_record[m] = [HC_time, HC_resource]
@@ -134,16 +144,22 @@ class NSGA_ALGORITHM:
 
 def main():
     # Các thông số của thuật toán
-    popsize = 50
-    num_parents_mating = 20
-    num_generations = 20,
-    distribution_index = 50
-    HC_penalt_point = 200
+    popsize = 6
+    num_parents_mating = 4
+    num_generations = 3000
+    distribution_index = 100
+    HC_penalt_point = 10
     SC_penalt_point = 3
 
     # Tạo một đối tượng PMSBX_GA_Algorithm
-    pmsbx_ga_algorithm = PMSBX_GA_Algorithm(popsize, num_parents_mating, num_generations, distribution_index,
-                                            HC_penalt_point, SC_penalt_point)
+    pmsbx_ga_algorithm = PMSBX_GA_Algorithm(
+        popsize,
+        num_parents_mating,
+        num_generations,
+        distribution_index,
+        HC_penalt_point,
+        SC_penalt_point,
+    )
 
     # Chạy thuật toán
     pmsbx_ga_algorithm.run_algorithm()
