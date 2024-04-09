@@ -1,6 +1,6 @@
 from src.algorithm import GA_Algorithm
 from src.all_packages import *
-from src.utils import load_data
+from src.utilities.utils import load_data
 
 if __name__ == "__main__":
     ####################
