@@ -1,6 +1,7 @@
 import copy
 
 from src.PMSBX_GA.pmsbx_ga import _generate_parent
+from src.chromosome import CHROMOSOME_NSGA
 from src.utilities.utils import *
 from src.utilities.utils import _cal_end_date
 
@@ -14,37 +15,13 @@ from src.utilities.utils import _cal_end_date
 #     "100": "RES"
 # }
 # ======================MODIFY======================
-def _generate_parent(df):
-    genes = []
-    # for supply_id, start_day, end_date, battery_type in zip(
-    #     self.df.supply_id,
-    #     self.df.start_day,
-    #     self.df.end_date,
-    #     self.df.battery_type,
-    # ):
-    for supply_id, start_day, end_date, battery_type, d_estdur in zip(
-        df.supply_id, df.start_day, df.end_date, df.battery_type, df.d_estdur
-    ):
-        rand_date = random_date_bit(start_day, end_date, random.random())
-        routine = random.choice([0, 1])
-        battery_type = battery_type.split("|")
-        battery_type_gen = random.choice(battery_type)
-        battery_type_gen = battery_type_bit[battery_type_gen]
-
-        random_num_battery = random.randint(0, 10)
-        # Chuyển số nguyên sang số nhị phân
-        num_battery = format(random_num_battery, "04b")
-        bitstring = "".join([rand_date, str(routine), battery_type_gen, num_battery])
-        chromosome = "-".join([supply_id, start_day, end_date, bitstring])
-        genes.append(chromosome)
-    return np.asarray(genes)
 
 """Create population function - NSGA"""
 
 def init_population(size_of_population):
     population = []
     for i in range(size_of_population):
-        individual = _generate_parent(get_data())
+        individual = CHROMOSOME_NSGA(get_data())
         population.append(individual)
     population = np.asarray(population)
     return population
@@ -233,25 +210,20 @@ def fitness_value(chromosome, error_output=False):  # fitness function
 
     count = 0
     for task in chromosome.chromosome:
-
-        component = task.split(
-            '-')
-        # take component
-        wonum = component[0]
-        target_date_begin = component[1]
-        end_date_begin = component[2]
-        bit_string = component[3]
-        # shift = int(bit_date[1])
-        shift = int(bit_string[0])
-        date_begin = decode_datetime(bit_string[1:-5])
-        num_people = bit_string[-5:-3]
+        gen_parser = parser_gen_ga(task)
+        # return Gen_structure(
+        #     id, start_date, end_date, scheduled_date, routine, battery_type, num_battery
+        # )
         # ===================MODIFY==================
-        team_bit = bit_string[-3:]
-        team = battery_type_bit_convert[team_bit]
+        battery_type = access_row_by_wonum(gen_parser.id)["battery_type"]
+        battery_type_list = battery_type.split("|")
+        check_battery_type = (
+                battery_type_dec_convert[gen_parser.battery_type] in battery_type_list
+        )
         # ===================MODIFY==================
         # access from dataframe
-        est_dur = access_row_by_wonum(wonum)['d_estdur']
-        site = access_row_by_wonum(wonum)['site']
+        est_dur = access_row_by_wonum(gen_parser.id)['d_estdur']
+        site = access_row_by_wonum(gen_parser.id)['site']
         # resouce modify
         # ==================MODIFY===================
         # team = access_row_by_wonum(wonum)['bdpocdiscipline']
@@ -263,36 +235,36 @@ def fitness_value(chromosome, error_output=False):  # fitness function
         # ==================MODIFY===================
         # convert to datetime type
         try:
-            dt_begin = datetime.datetime.strptime(date_begin, '%d/%m/%Y')
-            dt_end, shift_end = _cal_end_date(date_begin, shift, est_dur, num_people)
-            std_begin = datetime.datetime.strptime(target_date_begin, '%d/%m/%Y')  # start target_day datetime
-            etd_end = datetime.datetime.strptime(end_date_begin, '%d/%m/%Y')  # end target_day datetime
+            dt_begin = datetime.datetime.strptime(gen_parser.scheduled_date, '%d/%m/%Y')
+            dt_end, shift_end = _cal_end_date(gen_parser.scheduled_date, gen_parser.routine, est_dur, gen_parser.num_battery)
+            std_begin = datetime.datetime.strptime(gen_parser.start_date, '%d/%m/%Y')  # start target_day datetime
+            etd_end = datetime.datetime.strptime(gen_parser.start_date, '%d/%m/%Y')  # end target_day datetime
             duration_start = (std_begin - dt_begin).days
             duration_end = (dt_end - etd_end).days
             # compute violate point in every element
             if point_duration(duration_start) or point_duration(duration_end):
-                if wonum not in chromosome.HC_time:
+                if gen_parser.id not in chromosome.HC_time:
                     count += 1
                     HC_time += 1
                 if error_output:
-                    chromosome.HC_time.append(wonum)
+                    chromosome.HC_time.append(gen_parser.id)
                 continue
 
-            tup = (team, convert_datetime_to_string(dt_begin), shift, site)
+            tup = (gen_parser.battery_type, convert_datetime_to_string(dt_begin), gen_parser.routine, site)
 
             MANDAY[tup] = MANDAY.get(tup, 0) + 1
 
             # compute manday resource
             for i in np.arange(0, est_dur, 0.5):
-                run_date, run_shift = _cal_end_date(date_begin, shift, i)
-                tup_temp = (team, convert_datetime_to_string(run_date), shift, site)
+                run_date, run_shift = _cal_end_date(gen_parser.scheduled_date, gen_parser.routine, i)
+                tup_temp = (gen_parser.battery_type, convert_datetime_to_string(run_date), gen_parser.routine, site)
                 MANDAY[tup_temp] = MANDAY.get(tup_temp, 0) + 1
         except Exception:
             # invalid days
-            if wonum not in chromosome.HC_time:
+            if gen_parser.id not in chromosome.HC_time:
                 HC_time += 1
             if error_output:
-                chromosome.HC_time.append(wonum)
+                chromosome.HC_time.append(gen_parser.id)
     # print(count)
     for key, value in MANDAY.items():
         team, date, shift, site = key
