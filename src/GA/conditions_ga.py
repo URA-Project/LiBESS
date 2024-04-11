@@ -6,7 +6,7 @@ def hard_constraint_1(chromosome):
     BATDAY = dict()
     for gen in chromosome:
         # gen_parser = "id","start_date","end_date","scheduled_date","routine","battery_type","num_battery"
-        gen_parser = parser_gen_ga(gen)
+        gen_parser = parser_gen_pmsbx(gen)
         ###Decode Setup###
         battery_type = access_row_by_wonum(gen_parser.id)["battery_type"]
         battery_type_list = battery_type.split("|")
@@ -41,7 +41,7 @@ def hard_constraint_2(chromosome):
     # Ở một thời điểm, mỗi thiết bị chỉ được cung cấp năng lượng bởi 1 pin mà thôi
     # (không có 2 pin cùng cung cấp năng lượng cho 1 máy)
     HC2_count = 0
-    parsed_genes = [parser_gen_ga(gene) for gene in chromosome]
+    parsed_genes = [parser_gen_pmsbx(gene) for gene in chromosome]
     device_types = {
         gene.id: access_row_by_wonum(gene.id)["device_type"] for gene in parsed_genes
     }
@@ -68,7 +68,7 @@ def hard_constraint_2(chromosome):
 def hard_constraint_3(chromosome):
     # Ở một thời điểm, một pin không cung cấp năng lượng cho 2 thiết bị khác nhau.
     HC3_count = 0
-    parsed_genes = [parser_gen_ga(gene) for gene in chromosome]
+    parsed_genes = [parser_gen_pmsbx(gene) for gene in chromosome]
     device_types = {
         gene.id: access_row_by_wonum(gene.id)["device_type"] for gene in parsed_genes
     }

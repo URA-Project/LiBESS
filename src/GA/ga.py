@@ -183,7 +183,5 @@ def selection(
 
     # Select the best individuals for the next generation
     num_parents = parents.shape[0]  # parents.shape[0] = num_parents_mating
-    new_population = population[
-        fitness_array.argsort()[-num_parents:]
-    ]  # first n-largest fitness
+    new_population = population[fitness_array.argsort()[-num_parents:]]  # first n-largest fitness
     return new_population

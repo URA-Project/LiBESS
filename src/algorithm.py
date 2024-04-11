@@ -8,6 +8,9 @@ import pandas as pd
 import statistics
 import sys
 import random
+from src.NSGA.conditions_nsga import *
+
+"""Create chromosome - NSGA"""
 
 class GA_Algorithm:
     def __init__(
@@ -101,36 +104,62 @@ class NSGA_ALGORITHM:
         self.HC_penalt_point = HC_penalt_point
         self.SC_penalt_point = SC_penalt_point
 
+    def print_initial_info(self):
+        print(f"Starting NSGA-II with population size: {self.popsize}")
+        print(f"Number of generations: {self.num_generations}")
+        print(f"Number of parents mating: {self.num_parents_mating}")
+        print(f"Mutation rate: {self.mutation_rate}")
+        print(f"HC penalty point: {self.HC_penalt_point}, SC penalty point: {self.SC_penalt_point}")
+        print("=" * 50)
+
+    def print_population_fitness(self, population):
+        print("Population fitness:")
+        for i, individual in enumerate(population):
+            HC_time, HC_resource = nsga.fitness_value(individual)
+            print(f"Individual {i}: HC_time = {HC_time}, HC_resource = {HC_resource}")
+
+    def print_best_individual(self, best_individual):
+        HC_time, HC_resource = nsga.fitness_value(best_individual)
+        print(f"Best individual: HC_time = {HC_time}, HC_resource = {HC_resource}")
+
+    def print_generation_update(self, old_population, new_population):
+        print(f"Updating generation from {len(old_population)} to {len(new_population)} individuals")
+
     def run_algorithm(self):
-        # Add the steps of running the NSGA algorithm.
-        best_list, best_obj = [], []
+        self.print_initial_info()
         population = nsga.init_population(self.popsize)
-        # Add code evalue fitnesss
+
         for generation in range(self.num_generations):
-            # Selecting the best parents in the population for mating.
+            print(f"\nGeneration {generation + 1}/{self.num_generations}")
+
             parents = nsga.select_mating_pool(population, self.num_parents_mating)
-            # Crossover
             offspring_crossover = nsga.crossover(parents)
-            # Take every individual in the offspring after crossover to mutate with a given rate
             offspring_mutation = nsga.mutation(population, self.mutation_rate)
             chroms_obj_record = {}  # record each chromosome objective values as chromosome_obj_record={chromosome:[HC_time,HC_record]}
+            # Kết hợp quần thể hiện tại và con cái để tạo ra một quần thể mới
+            total_chromosome = np.concatenate(
+                (copy.deepcopy(parents), copy.deepcopy(offspring_crossover), copy.deepcopy(offspring_mutation)))
 
-            total_chromosome = np.concatenate((copy.deepcopy(parents), copy.deepcopy(
-                offspring_crossover), copy.deepcopy(population), copy.deepcopy(
-                offspring_mutation)))  # combine parent and offspring chromosomes
-
-            for m in range(self.popsize * 2):
-                HC_time, HC_resource = nsga.fitness_value(total_chromosome[m])
+            chroms_obj_record = {}
+            for m in range(len(total_chromosome)):
+                HC_time, HC_resource = nsga.cal_hc_time_and_resource(total_chromosome[m])
+                # HC_time, HC_resource = nsga.fitness_value(total_chromosome[m])
+                # fitness_values = cal_fitness_value(population, self.HC_penalt_point, self.SC_penalt_point)
                 chroms_obj_record[m] = [HC_time, HC_resource]
+            self.print_population_fitness(total_chromosome)
+
             '''-------non-dominated sorting-------'''
             front = nsga.non_dominated_sorting(self.popsize, chroms_obj_record)
 
             '''----------selection----------'''
             population, new_pop = nsga.selection(self.popsize, front, chroms_obj_record, total_chromosome)
+
+            self.print_generation_update(total_chromosome, population)
+
             new_pop_obj = [chroms_obj_record[k] for k in new_pop]
 
-            '''----------comparison----------'''
-            if generation == 0:
+            '''----------comparison and updating the best found so far----------'''
+            if generation == 0 or len(best_list) == 0:
                 best_list = copy.deepcopy(population)
                 best_obj = copy.deepcopy(new_pop_obj)
             else:
@@ -141,29 +170,43 @@ class NSGA_ALGORITHM:
                 best_list, best_pop = nsga.selection(self.popsize, now_best_front, total_obj, total_list)
                 best_obj = [total_obj[k] for k in best_pop]
 
+            # Tìm và in cá thể tốt nhất trong quần thể
+            if best_list:
+                self.print_best_individual(best_list[0])
+
+    # Lưu ý: Mã giả định rằng các hàm `init_population`, `select_mating_pool`, `crossover`, `mutation`, `fitness_value`, `non_dominated_sorting`, và `selection` đã được định nghĩa và hoạt động đúng đắn.
+
 
 def main():
     # Các thông số của thuật toán
     popsize = 6
     num_parents_mating = 4
-    num_generations = 3000
+    num_generations = 10
     distribution_index = 100
     HC_penalt_point = 10
     SC_penalt_point = 3
-
-    # Tạo một đối tượng PMSBX_GA_Algorithm
-    pmsbx_ga_algorithm = PMSBX_GA_Algorithm(
+    #
+    nsga_algorithm = NSGA_ALGORITHM(
         popsize,
         num_parents_mating,
         num_generations,
-        distribution_index,
+        0.3,
         HC_penalt_point,
         SC_penalt_point,
     )
+    nsga_algorithm.run_algorithm();
 
-    # Chạy thuật toán
-    pmsbx_ga_algorithm.run_algorithm()
-
-
+    # pmsbx_ga_algorithm = PMSBX_GA_Algorithm(
+    #     popsize,
+    #     num_parents_mating,
+    #     num_generations,
+    #     distribution_index,
+    #     HC_penalt_point,
+    #     SC_penalt_point,
+    # )
+    # # Chạy thuật toán
+    # pmsbx_ga_algorithm.run_algorithm()
 if __name__ == "__main__":
     main()
+    # Tạo một đối tượng PMSBX_GA_Algorithm
+
