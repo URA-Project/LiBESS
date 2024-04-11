@@ -82,6 +82,8 @@ class CHROMOSOME_PMSBX_GA:
                 i = i + 0.5
         return genes
 
+
+"""Create chromosome - NSGA"""
 class CHROMOSOME_NSGA:
     def __init__(self, df):
         self.HC_resource = []
@@ -115,5 +117,3 @@ class CHROMOSOME_NSGA:
             chromosome = "-".join([supply_id, start_day, end_date, bitstring])
             genes.append(chromosome)
         return np.asarray(genes)
-
-

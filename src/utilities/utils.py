@@ -81,6 +81,8 @@ def get_dict_supply_id():
 # Access a row in the DataFrame data based on the supply_id value using the dict_supply_id dictionary.
 def access_row_by_wonum(supply_id):
     dict_supply_id = get_dict_supply_id()
+    # print(dict_supply_id);
+    print(data_frame.iloc[dict_supply_id[supply_id]]);
     return data_frame.iloc[dict_supply_id[supply_id]]
 
 
