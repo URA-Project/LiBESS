@@ -12,6 +12,7 @@ from src.NSGA.conditions_nsga import *
 
 """Create chromosome - NSGA"""
 
+
 class GA_Algorithm:
     def __init__(
             self,
@@ -127,6 +128,7 @@ class NSGA_ALGORITHM:
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
         plt.pause(0.1)
+
     def print_initial_info(self):
         print(f"Starting NSGA-II with population size: {self.popsize}")
         print(f"Number of generations: {self.num_generations}")
@@ -158,6 +160,7 @@ class NSGA_ALGORITHM:
         plt.ylabel('HC_resource')
         plt.legend()
         plt.show()
+
     # def plot_fitness(self, fitness_values):
     #     # Generate a line plot of fitness values over generations
     #     plt.plot(fitness_values, '-o', label='Fitness over Generations')
@@ -200,6 +203,7 @@ class NSGA_ALGORITHM:
             population, new_pop = nsga.selection(self.popsize, front, chroms_obj_record, total_chromosome)
 
             new_pop_obj = [chroms_obj_record[k] for k in new_pop]
+            self.plot_pareto_front(new_pop_obj)
 
             # Calculate fitness with list handling
             fitness_values = []
@@ -235,15 +239,25 @@ class NSGA_ALGORITHM:
         plt.grid(True)
         plt.show()
 
+    def plot_pareto_front(self, objectives):
+        HC_times = [obj[0] for obj in objectives]
+        HC_resources = [obj[1] for obj in objectives]
+
+        plt.scatter(HC_times, HC_resources)
+        plt.title('Pareto Front')
+        plt.xlabel('HC_time')
+        plt.ylabel('HC_resource')
+        plt.show()
 
     # Lưu ý: Mã giả định rằng các hàm `init_population`, `select_mating_pool`, `crossover`, `mutation`, `fitness_value`, `non_dominated_sorting`, và `selection` đã được định nghĩa và hoạt động đúng đắn.
+
 
 # class PMSBX_NSGA_Algorithm:
 #
 def main():
     # Các thông số của thuật toán
-    popsize = 40
-    num_parents_mating = 20
+    popsize = 100
+    num_parents_mating = 50
     num_generations = 20
     # distribution_index = 100
     mutation_rate = 0.3
@@ -270,7 +284,8 @@ def main():
     # )
     # # Chạy thuật toán
     # pmsbx_ga_algorithm.run_algorithm()
+
+
 if __name__ == "__main__":
     main()
     # Tạo một đối tượng PMSBX_GA_Algorithm
-
