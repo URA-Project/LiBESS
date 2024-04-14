@@ -5,8 +5,7 @@ import random
 
 from src.chromosome import *
 from src.PMSBX_GA.conditions_pmsbx_ga import cal_fitness_value
-
-
+from src.utilities.utils import *
 """Create population function - PMSBX-GA"""
 
 

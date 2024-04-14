@@ -2,8 +2,8 @@ from src.utilities.utils import *
 import datetime
 from collections import defaultdict
 import numpy as np
-
-
+# from src.PMSBX_GA.conditions_pmsbx_ga import cal_fitness_value
+from src.NSGA.conditions_nsga import *
 def hard_constraint_1(chromosome):
     HC1_count = 0
     BATDAY = dict()
