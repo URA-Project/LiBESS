@@ -1,11 +1,11 @@
 import copy
 import sys
-sys.path.insert(0, 'C:/Users/trong.le-van/OneDrive - Ban Vien Corporation/HCMUT_OneDrive/URA/Paper/LiBESS-NSGA_II/LiBESS-NSGA-II-V2/src')
+sys.path.insert(0, '/LiBESS-NSGA-II-V2/src')
 from all_packages import *
 from utilities.utils import  *
 from collections import defaultdict
 
-data = pd.read_csv('C:/Users/trong.le-van/OneDrive - Ban Vien Corporation/HCMUT_OneDrive/URA/Paper/LiBESS-NSGA_II/LiBESS-NSGA-II-V2/data/data_test.csv')
+data = pd.read_csv('/LiBESS-NSGA-II-V2/data/data_test.csv')
 
 """Create population function - NSGA"""
 
