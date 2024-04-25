@@ -11,7 +11,7 @@ import random
 from PMSBX_NSGA import pmsbx_nsga
 
 import sys
-sys.path.insert(0, 'C:/Users/trong.le-van/OneDrive - Ban Vien Corporation/HCMUT_OneDrive/URA/Paper/LiBESS-NSGA_II/LiBESS-NSGA-II-V2/src')
+sys.path.insert(0, '/LiBESS-NSGA-II-V2/src')
 
 """Create chromosome - NSGA"""
 
@@ -181,7 +181,7 @@ class NSGA_ALGORITHM:
 
         '''----------Lưu các đường pareto ra file và vẽ hình ----------'''
         #Nên tạo fuction và di chuyển code lưu file ra ngoài hàm riêng
-        file_path = "C:/Users/trong.le-van/OneDrive - Ban Vien Corporation/HCMUT_OneDrive/URA/Paper/LiBESS-NSGA_II/LiBESS-NSGA-II-V2/data/data_draw.txt"
+        file_path = "/LiBESS-NSGA-II-V2/data/data_draw.txt"
         with open(file_path, 'w') as file:
             for pareto_points in data_draw:
                 file.write("-------------------")
@@ -218,13 +218,13 @@ class NSGA_ALGORITHM:
         plt.legend()
         # Hiển thị đồ thị
         # Lưu hình ảnh
-        plt.savefig('C:/Users/trong.le-van/OneDrive - Ban Vien Corporation/HCMUT_OneDrive/URA/Paper/LiBESS-NSGA_II/LiBESS-NSGA-II-V2/data/pareto_fronts.png')
+        plt.savefig('/LiBESS-NSGA-II-V2/data/pareto_fronts.png')
         plt.show()
         # Store the best fitness for each generation
         print("best_fitness_over_gens", best_fitness_over_gens)
 
         '''----------Lưu các best fitness ra file----------'''
-        best_fitness = "C:/Users/trong.le-van/OneDrive - Ban Vien Corporation/HCMUT_OneDrive/URA/Paper/LiBESS-NSGA_II/LiBESS-NSGA-II-V2/data/best_fitness.txt"
+        best_fitness = "/LiBESS-NSGA-II-V2/data/best_fitness.txt"
         with open(best_fitness, 'w') as file:
             for fitness in best_fitness_over_gens:
                 file.write(str(fitness) + '\n')
