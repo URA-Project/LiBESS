@@ -4,10 +4,17 @@ import sys
 from all_packages import *
 from utilities.utils import *
 from collections import defaultdict
-sys.path.insert(0, '/LiBESS-NSGA-II-V2/src')
-data = pd.read_csv('/LiBESS-NSGA-II-V2/data/data_test.csv')
+
+sys.path.insert(
+    0,
+    "/Users/mac/Library/CloudStorage/OneDrive-Personal/Study/URA/GA_Emerging_Papers/LiBESS-MAIN/src",
+)
+data = pd.read_csv(
+    "/Users/mac/Library/CloudStorage/OneDrive-Personal/Study/URA/GA_Emerging_Papers/LiBESS-MAIN/data/data_test.csv"
+)
 
 """Create population function - NSGA"""
+
 
 class CHROMOSOME_PMSBX_NSGA:
     def __init__(self, df):
@@ -20,7 +27,11 @@ class CHROMOSOME_PMSBX_NSGA:
     def _generate_parent(self):
         genes = []
         for supply_id, start_day, end_date, battery_type, d_estdur in zip(
-            self.df.supply_id, self.df.start_day, self.df.end_date, self.df.battery_type, self.df.d_estdur
+            self.df.supply_id,
+            self.df.start_day,
+            self.df.end_date,
+            self.df.battery_type,
+            self.df.d_estdur,
         ):
             rand_date = random_datetime(start_day, end_date)
             routine = random.choice([0, 1])
@@ -35,6 +46,7 @@ class CHROMOSOME_PMSBX_NSGA:
             chromosome = "-".join([supply_id, start_day, end_date, decstring])
             genes.append(chromosome)
         return np.asarray(genes)
+
 
 def init_population(size_of_population):
     new_population = []
@@ -59,12 +71,12 @@ def select_mating_pool(pop, num_parents_mating):
 
 """Crossover - NSGA"""
 
+
 def find_point(test_str):
-    begin = test_str.rfind('-') + 1
+    begin = test_str.rfind("-") + 1
     shift = test_str[begin]
 
     crossover_rand_date = random.sample(range(begin + 1, begin + 12), 2)
-    # crossover_num_people = random.sample(range(begin + 12,begin + 14),2)
     crossover_rand_date.sort()
 
     return begin, crossover_rand_date
@@ -81,25 +93,22 @@ def _str_time_prop(start, end, time_format, prop):
 def random_date(start, end, prop):  # 0001 = current year, 0002 = next year
     # generate date in current data
     sched_start = _str_time_prop(start, end, "%d/%m/%Y", prop)
-    date_sched_start = format(int(sched_start[:2]), '05b')
-    month_sched_start = format(int(sched_start[3:5]), '04b')
-    year_sched_start = format(int(sched_start[6:]), '02b')
-    sched_start = ''.join([date_sched_start, month_sched_start, year_sched_start])
+    date_sched_start = format(int(sched_start[:2]), "05b")
+    month_sched_start = format(int(sched_start[3:5]), "04b")
+    year_sched_start = format(int(sched_start[6:]), "02b")
+    sched_start = "".join([date_sched_start, month_sched_start, year_sched_start])
     return sched_start
+
 
 def crossover(mating_pool, distribution_index):
     offspring = []
     parents = copy.deepcopy(mating_pool)
 
-    for k in range(0, parents.shape[0], 2):
-        # Index of the first parent to mate.
-        parent1_idx = k % parents.shape[0]
-        # Index of the second parent to mate.
-        if k + 1 >= len(parents):
-            break
-        parent2_idx = (k + 1) % parents.shape[0]
-        parent1 = parents[parent1_idx]
-        parent2 = parents[parent2_idx]
+    while parents.size > 0:
+        mating_idx = np.random.choice(parents.shape[0], 2, replace=True)
+        mating_parents = parents[mating_idx]
+        parent1 = mating_parents[0]
+        parent2 = mating_parents[1]
         chromosome_1 = parent1.chromosome
         chromosome_2 = parent2.chromosome
         offspring_1 = []
@@ -115,13 +124,18 @@ def crossover(mating_pool, distribution_index):
             offspring_1.append(new_gen_1_string)
             offspring_2.append(new_gen_2_string)
 
-        temp_1 = parents[parent1_idx]
-        temp_1.chromosome = offspring_1
-        temp_2 = parents[parent1_idx]
-        temp_2.chromosome = offspring_2
-        offspring.append(temp_1)
-        offspring.append(temp_2)
+        parent1.chromosome = offspring_1
+        parent2.chromosome = offspring_2
+
+        parent1.HC_time = []
+        parent1.HC_resource = []
+        parent2.HC_time = []
+        parent2.HC_resource = []
+        offspring.append(parent1)
+        offspring.append(parent2)
+        parents = np.delete(parents, list(mating_idx), axis=0)
     return np.array(offspring)
+
 
 def convert_to_string_format(vector, gene):
     # gene(id, start_date, end_date, scheduled_date, routine, battery_type, num_battery)
@@ -140,6 +154,40 @@ def convert_to_string_format(vector, gene):
     )
     new_gene = "-".join([gene.id, gene.start_date, gene.end_date, decstring])
     return new_gene
+
+
+def convert_to_string_format1(vector, gene):
+    # gene(id, start_date, end_date, scheduled_date, routine, battery_type, num_battery)
+    # v = (routine,(scheduled_date − start_date), battery_type, num_battery)
+    start_date = datetime.datetime.strptime(gene.start_date, date_format)
+    scheduled_date = datetime.timedelta(days=vector.difference_date) + start_date
+    scheduled_date_string = scheduled_date.strftime(date_format)
+    battery = vector.num_battery
+    if gene.num_battery == str(battery):
+        temp = True
+        while temp:
+            A = [i / 10 for i in range(1, 11)]
+            random_number = random.choice(A)
+            if random_number < 0.5:
+                battery = random.randint(1, 3) + battery
+            else:
+                battery = battery - random.randint(1, 3)
+            if battery > 0 and battery < 10:
+                temp = False
+            else:
+                battery = vector.num_battery
+
+    decstring = "-".join(
+        [
+            scheduled_date_string,
+            str(vector.routine),
+            str(vector.battery_type),
+            str(battery),
+        ]
+    )
+    new_gene = "-".join([gene.id, gene.start_date, gene.end_date, decstring])
+    return new_gene
+
 
 def crossover_calculation(gen_1, gen_2, distribution_index):
     # Khoi tao bien group selected variables
@@ -185,6 +233,7 @@ def crossover_calculation(gen_1, gen_2, distribution_index):
         check = check_violations(candidate_1, candidate_2)
     return candidate_1, candidate_2
 
+
 def check_violations(candidate_1, candidate_2):
     # ['routine', 'difference_date', 'battery_type', 'num_battery']
 
@@ -213,23 +262,27 @@ def check_violations(candidate_1, candidate_2):
         return False
     return True
 
+
 """Mutation - NSGA"""
+
 
 def mutation(offspring_crossover, distribution_index):
     new_offspring = []
     offspring = copy.deepcopy(offspring_crossover)
     for index in range(len(offspring)):
         chromosome = offspring[index].chromosome
-        offspring_temp = []
+        chromosome_temp = []
         for index_gene in range(len(chromosome)):
             gene = parser_gen_pmsbx(chromosome[index_gene])
             vector = mutation_calculation(gene, distribution_index)
-            new_gene_string = convert_to_string_format(vector, gene)
-            offspring_temp.append(new_gene_string)
-        temp = offspring[index]
-        temp.chromosome = offspring_temp
-        new_offspring.append(temp)
+            new_gene_string = convert_to_string_format1(vector, gene)
+            chromosome_temp.append(new_gene_string)
+        offspring[index].chromosome = chromosome_temp
+        offspring[index].HC_time = []
+        offspring[index].HC_resource = []
+        new_offspring.append(offspring[index])
     return np.array(new_offspring)
+
 
 def mutation_calculation(gene, distribution_index):
     # Khoi tao bien group selected variables
@@ -253,9 +306,17 @@ def mutation_calculation(gene, distribution_index):
         )
     # temp = Vector(*parents)
     # vector = (temp.routine, temp.difference_date, temp.battery_type, temp.num_battery)
-    vector = np.array([int(gene.routine), diff_date_gen_1.days, int(gene.battery_type), int(gene.num_battery)])
+    vector = np.array(
+        [
+            int(gene.routine),
+            diff_date_gen_1.days,
+            int(gene.battery_type),
+            int(gene.num_battery),
+        ]
+    )
     new_gen = scalar_multiply_motation(vector, delta_para, random_rate)
     return new_gen
+
 
 def scalar_multiply_motation(vector, delta, epsilon):
     new_vector = (0, 0, 0, 0)
@@ -280,31 +341,61 @@ def scalar_multiply_motation(vector, delta, epsilon):
         new_vector = tuple(
             u1 + delta * (u2 - u1) for u1, u2 in zip(vector, vector_random)
         )
-    rounded_vector = tuple(int(math.ceil(element)) for element in new_vector)
+    # rounded_vector = tuple(int(math.ceil(element)) for element in new_vector)
+    rounded_vector = tuple(
+        (
+            int(math.ceil(element))
+            if element - math.floor(element) >= 0.5
+            else int(math.floor(element))
+        )
+        for element in new_vector
+    )
+
     return Vector(*rounded_vector)
 
-'''-------non-dominated sorting function-------'''
+
+"""-------non-dominated sorting function-------"""
+
+
 def non_dominated_sorting(population_size, chroms_obj_record):
     s, n = {}, {}
     front, rank = {}, {}
     front[0] = []
-    for p in range(population_size * 2):
+    for p in range(population_size):
         s[p] = []
         n[p] = 0
-        for q in range(population_size * 2):
-            #TODO: define dominate operator in the if statement
-            if ((chroms_obj_record[p][0] < chroms_obj_record[q][0] and chroms_obj_record[p][1] < chroms_obj_record[q][
-                1]) or (chroms_obj_record[p][0] <= chroms_obj_record[q][0] and chroms_obj_record[p][1] <
-                        chroms_obj_record[q][1])
-                    or (chroms_obj_record[p][0] < chroms_obj_record[q][0] and chroms_obj_record[p][1] <=
-                        chroms_obj_record[q][1])):
+        for q in range(population_size):
+            # TODO: define dominate operator in the if statement
+            if (
+                (
+                    chroms_obj_record[p][0] < chroms_obj_record[q][0]
+                    and chroms_obj_record[p][1] < chroms_obj_record[q][1]
+                )
+                or (
+                    chroms_obj_record[p][0] <= chroms_obj_record[q][0]
+                    and chroms_obj_record[p][1] < chroms_obj_record[q][1]
+                )
+                or (
+                    chroms_obj_record[p][0] < chroms_obj_record[q][0]
+                    and chroms_obj_record[p][1] <= chroms_obj_record[q][1]
+                )
+            ):
                 if q not in s[p]:
                     s[p].append(q)
-            elif ((chroms_obj_record[p][0] > chroms_obj_record[q][0] and chroms_obj_record[p][1] > chroms_obj_record[q][
-                1]) or (chroms_obj_record[p][0] >= chroms_obj_record[q][0] and chroms_obj_record[p][1] >
-                        chroms_obj_record[q][1])
-                  or (chroms_obj_record[p][0] > chroms_obj_record[q][0] and chroms_obj_record[p][1] >=
-                      chroms_obj_record[q][1])):
+            elif (
+                (
+                    chroms_obj_record[p][0] > chroms_obj_record[q][0]
+                    and chroms_obj_record[p][1] > chroms_obj_record[q][1]
+                )
+                or (
+                    chroms_obj_record[p][0] >= chroms_obj_record[q][0]
+                    and chroms_obj_record[p][1] > chroms_obj_record[q][1]
+                )
+                or (
+                    chroms_obj_record[p][0] > chroms_obj_record[q][0]
+                    and chroms_obj_record[p][1] >= chroms_obj_record[q][1]
+                )
+            ):
                 n[p] = n[p] + 1
         if n[p] == 0:
             rank[p] = 0
@@ -312,7 +403,7 @@ def non_dominated_sorting(population_size, chroms_obj_record):
                 front[0].append(p)
 
     i = 0
-    while (front[i] != []):
+    while front[i] != []:
         Q = []
         for p in front[i]:
             for q in s[p]:
@@ -337,7 +428,8 @@ def non_dominated_sorting(population_size, chroms_obj_record):
         points[idx] = point
     return front, chroms_obj_record
 
-'''--------calculate crowding distance function---------'''
+
+"""--------calculate crowding distance function---------"""
 
 
 def calculate_crowding_distance(front, chroms_obj_record):
@@ -410,16 +502,17 @@ def selection(population_size, front, chroms_obj_record, total_chromosome):
 
     return population_list, new_pop
 
+
 def cal_hc_time_and_resource(chromosome):
     HC_TIME = []
     HC_RESOURCE = []
-    result, HC_resource_count, total_capacity = manday_chromosome(chromosome)
+    resource_and_deadline, total_capacity = manday_chromosome(chromosome)
     # Giả sử deadline_count được tính toán trong manday_chromosome và được trả về như một phần của result
     # Điều này yêu cầu bạn điều chỉnh manday_chromosome để trả về cả HC_resource_count và deadline_count
-    deadline_count = (result - HC_resource_count) / 5  # Tính lại từ công thức result = HC_count + deadline_count * 5
     HC_TIME.append(total_capacity)
-    HC_RESOURCE.append(HC_resource_count)
-    return total_capacity, HC_resource_count
+    HC_RESOURCE.append(resource_and_deadline)
+    return total_capacity, resource_and_deadline
+
 
 def manday_chromosome(total_chromosome):
     chromosome = copy.deepcopy(total_chromosome)
@@ -454,9 +547,11 @@ def manday_chromosome(total_chromosome):
         num_batteries = gen_parser.num_battery
         date = validate_date_format(gen_parser.scheduled_date)
         if date != -1:
-            data_value = get_resource(battery_type_dec_convert[gen_parser.battery_type], date, device)
+            data_value = get_resource(
+                battery_type_dec_convert[gen_parser.battery_type], date, device
+            )
             total_capacity = int(num_batteries) * int(data_value) + total_capacity
-        else: 
+        else:
             deadline_count += 1
 
     for key, value in BATDAY.items():
@@ -467,9 +562,10 @@ def manday_chromosome(total_chromosome):
         if data_resource_value == -1 or data_resource_value < value_KAh:
             HC_count += 1
 
-    result =  HC_count + deadline_count*5
+    resource_and_deadline = HC_count + deadline_count * 2
 
-    return result, HC_count, total_capacity
+    return resource_and_deadline, total_capacity
+
 
 def validate_date_format(date_str):
     try:
@@ -477,3 +573,66 @@ def validate_date_format(date_str):
         return date_obj.strftime("%d/%m/%Y")
     except ValueError:
         return -1
+
+
+def save_output(chromosome, index):
+    total_battery = 0
+    total_capacity = 0
+    BATDAY = dict()
+    resources = 0
+    dealine_count = 0
+    BATDAY = defaultdict(float)
+
+    for gen in chromosome.chromosome:
+        gen_parser = parser_gen_pmsbx(gen)
+        d_estdur = access_row_by_wonum(gen_parser.id)["d_estdur"]
+        device = access_row_by_wonum(gen_parser.id)["device_type"]
+        dealine = access_row_by_wonum(gen_parser.id)["end_date"]
+        date_dealine = datetime.datetime.strptime(dealine, "%d/%m/%Y")
+        date_begin = datetime.datetime.strptime(gen_parser.scheduled_date, "%d/%m/%Y")
+
+        num_date = round(d_estdur)
+        check_dealine = date_begin + datetime.timedelta(days=num_date)
+        if date_dealine < check_dealine:
+            dealine_count += 1
+        for i in range(int(d_estdur * 2)):  # Loop over half days
+            num_date = i / 2
+            run_date = date_begin + datetime.timedelta(days=num_date)
+            tup_temp = (
+                battery_type_dec_convert[gen_parser.battery_type],
+                run_date.strftime("%d/%m/%Y"),
+                device,
+            )
+            BATDAY[tup_temp] += 0.5
+
+    for key, value in BATDAY.items():
+        bat_type, date, device = key
+        data_resource_value = get_resource(bat_type, date, device)
+        # data_resource_value = data_resource_value * 1.25
+        value_KAh = value * 5
+
+        if data_resource_value == -1 or data_resource_value < value_KAh:
+            resources += 1
+
+    for gen in chromosome.chromosome:
+        # gen_parser = "id","start_date","end_date","scheduled_date","routine","battery_type","num_battery"
+        gen_parser = parser_gen_pmsbx(gen)
+        total_battery = total_battery + int(gen_parser.num_battery)
+
+        scheduled_date = gen_parser.scheduled_date
+        # date = scheduled_date.strftime("%d/%m/%Y")
+        type_battery = battery_type_dec_convert[gen_parser.battery_type]
+        num_batteries = int(gen_parser.num_battery)
+        device = access_row_by_wonum(gen_parser.id)["device_type"]
+        data_resource_value = get_resource(type_battery, scheduled_date, device)
+        total_capacity = num_batteries * int(data_resource_value) + total_capacity
+
+    # Writing results to file
+    if (((index + 1) % 10 == 0) or (index == 0)) or (index == 0):
+        output_file = "/Users/mac/Library/CloudStorage/OneDrive-Personal/Study/URA/GA_Emerging_Papers/LiBESS-MAIN/output/output_pmsbx_nsga.txt"
+        with open(output_file, "a") as file:
+            file.write("++++++++++Lan lap thu  {} ++++++++ \n".format(index + 1))
+            file.write("Dealine {}:  {}\n".format(index + 1, dealine_count))
+            file.write("Total battery {}:  {}\n".format(index + 1, total_battery))
+            file.write("Total capacity {}:  {}\n".format(index + 1, total_capacity))
+            file.write("Resources {}:  {}\n".format(index + 1, resources))
