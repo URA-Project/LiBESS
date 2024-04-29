@@ -1,6 +1,14 @@
 import datetime
 import random
-from src.all_packages import *
+
+import sys
+
+sys.path.insert(
+    0,
+    "/Users/mac/Library/CloudStorage/OneDrive-Personal/Study/URA/GA_Emerging_Papers/LiBESS-MAIN/src",
+)
+
+from all_packages import *
 import numpy as np
 from collections import namedtuple
 import pandas as pd
@@ -81,18 +89,23 @@ def get_dict_supply_id():
 # Access a row in the DataFrame data based on the supply_id value using the dict_supply_id dictionary.
 def access_row_by_wonum(supply_id):
     dict_supply_id = get_dict_supply_id()
+    # print(dict_supply_id);
+    # print(data_frame.iloc[dict_supply_id[supply_id]]);
     return data_frame.iloc[dict_supply_id[supply_id]]
 
 
+resource_data = load_data(PATHS["resource"])
+date_unique = np.unique(resource_data.date.to_list()).astype(list)
+
+
 def get_resource(battery_type, date, device):
-    resource_data = load_data(PATHS["resource"])
-    date_unique = np.unique(resource_data.date.to_list()).astype(list)
+    global resource_data, date_unique
     if date not in date_unique:
         return -1
     return resource_data[
         (resource_data["battery_type"] == battery_type)
         & (resource_data["date"] == date)
-        ][device].item()
+    ][device].item()
 
 
 def get_data():
@@ -284,7 +297,9 @@ def _cal_end_date(date_begin, shift, est_dur, num_people):
     if shift == 1 and int(est_dur) != est_dur:
         after_shift = 0
         est_dur += 1
-    dt_end = datetime.datetime.strptime(date_begin, '%d/%m/%Y') + datetime.timedelta(days=int(est_dur))
+    dt_end = datetime.datetime.strptime(date_begin, "%d/%m/%Y") + datetime.timedelta(
+        days=int(est_dur)
+    )
 
     return dt_end, after_shift
 
