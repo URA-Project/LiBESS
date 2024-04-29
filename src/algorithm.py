@@ -209,17 +209,13 @@ class PMSBX_NSGA_ALGORITHM:
         popsize,
         num_parents_mating,
         num_generations,
-        mutation_rate,
         HC_penalt_point,
         SC_penalt_point,
         distribution_index,
     ):
-        # Need to update
         self.popsize = popsize
         self.num_parents_mating = num_parents_mating
         self.num_generations = num_generations
-        self.mutation_rate = mutation_rate
-        self.best_outputs = []
         self.HC_penalt_point = HC_penalt_point
         self.SC_penalt_point = SC_penalt_point
         self.distribution_index = distribution_index
@@ -300,7 +296,6 @@ def main_pmsbx_nsga():
     num_parents_mating = 4
     num_generations = 20
     distribution_index = 80
-    mutation_rate = 0.3
     HC_penalt_point = 10
     SC_penalt_point = 3
 
@@ -308,7 +303,6 @@ def main_pmsbx_nsga():
         popsize,
         num_parents_mating,
         num_generations,
-        mutation_rate,
         HC_penalt_point,
         SC_penalt_point,
         distribution_index,
@@ -340,7 +334,7 @@ def main_ga():
     popsize = 6
     num_parents_mating = 4
     num_generations = 30
-    mutation_rate = 0.8
+    mutation_rate = 0.5
     HC_penalt_point = 10
     SC_penalt_point = 3
     ga_algorithm = GA_ALGORITHM(
