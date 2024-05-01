@@ -260,17 +260,17 @@ class PMSBX_NSGA_ALGORITHM:
 
             """-------non-dominated sorting-------"""
             front, points = pmsbx_nsga.non_dominated_sorting(
-                len(unique_total_chromosome), chroms_obj_record
+                len(unique_total_chromosome), unique_chroms_obj_record
             )
 
             """----------selection----------"""
             population, new_pop = pmsbx_nsga.selection(
-                self.popsize, front, chroms_obj_record, total_chromosome
+                self.popsize, front, unique_chroms_obj_record, unique_total_chromosome
             )
 
             best_fitness = {}
             for point_index in front[0]:
-                value = chroms_obj_record[point_index]
+                value = unique_chroms_obj_record[point_index]
                 best_fitness[point_index] = value[1]
 
             # Lấy chỉ mục của giá trị nhỏ nhất
@@ -279,7 +279,7 @@ class PMSBX_NSGA_ALGORITHM:
 
             # Calculate fitness with list handling
             best_fitness_over_gens.append(
-                chroms_obj_record[min_index][0] + chroms_obj_record[min_index][1]
+                unique_chroms_obj_record[min_index][0] + unique_chroms_obj_record[min_index][1]
             )
 
         """----------Lưu các best fitness ra file----------"""
