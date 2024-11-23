@@ -1,8 +1,8 @@
 {
     "individuals": [
         {
-            "deadline_violation": 39,
-            "battery_type_violation": 9,
+            "deadline_violation": 43,
+            "battery_type_violation": 8,
             "chromosomes": [
                 {
                     "total_expected": 15,
@@ -17,7 +17,7 @@
                             "supply_id": "H13779495",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "09/03/2024",
+                            "scheduled_date": "01/03/2024",
                             "time_of_day": 0,
                             "battery_type": 1,
                             "power_supply_capacity": 4
@@ -26,17 +26,17 @@
                             "supply_id": "H13779495",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "19/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
+                            "scheduled_date": "04/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13779495",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "06/03/2024",
-                            "time_of_day": 1,
+                            "scheduled_date": "20/03/2024",
+                            "time_of_day": 0,
                             "battery_type": 3,
                             "power_supply_capacity": 4
                         },
@@ -44,9 +44,9 @@
                             "supply_id": "H13779495",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
+                            "scheduled_date": "31/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 2,
+                            "battery_type": 1,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -65,26 +65,8 @@
                             "supply_id": "H13824912",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13824912",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
+                            "scheduled_date": "07/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13824912",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "22/03/2024",
-                            "time_of_day": 1,
                             "battery_type": 1,
                             "power_supply_capacity": 4
                         },
@@ -92,9 +74,27 @@
                             "supply_id": "H13824912",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
+                            "scheduled_date": "10/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 3,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13824912",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "07/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 7
+                        },
+                        {
+                            "supply_id": "H13824912",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
                             "power_supply_capacity": 4
                         }
                     ]
@@ -112,17 +112,8 @@
                             "supply_id": "H13824980",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "30/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13824980",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
                             "scheduled_date": "08/03/2024",
-                            "time_of_day": 1,
+                            "time_of_day": 0,
                             "battery_type": 4,
                             "power_supply_capacity": 4
                         },
@@ -130,7 +121,7 @@
                             "supply_id": "H13824980",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "16/03/2024",
+                            "scheduled_date": "26/03/2024",
                             "time_of_day": 0,
                             "battery_type": 5,
                             "power_supply_capacity": 4
@@ -139,9 +130,18 @@
                             "supply_id": "H13824980",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "13/03/2024",
+                            "scheduled_date": "26/03/2024",
                             "time_of_day": 1,
                             "battery_type": 1,
+                            "power_supply_capacity": 8
+                        },
+                        {
+                            "supply_id": "H13824980",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "27/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -160,36 +160,36 @@
                             "supply_id": "H13824986",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "04/03/2024",
+                            "scheduled_date": "31/03/2024",
                             "time_of_day": 0,
                             "battery_type": 3,
-                            "power_supply_capacity": 4
+                            "power_supply_capacity": 9
                         },
                         {
                             "supply_id": "H13824986",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
+                            "scheduled_date": "15/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 2,
+                            "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13824986",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "05/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13824986",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
+                            "scheduled_date": "21/03/2024",
                             "time_of_day": 0,
                             "battery_type": 4,
+                            "power_supply_capacity": 2
+                        },
+                        {
+                            "supply_id": "H13824986",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "13/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
                             "power_supply_capacity": 4
                         }
                     ]
@@ -207,36 +207,36 @@
                             "supply_id": "H13825022",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
+                            "scheduled_date": "24/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825022",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "20/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825022",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "18/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825022",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "20/03/2024",
                             "time_of_day": 0,
                             "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825022",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "11/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825022",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825022",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "06/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 5,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -255,16 +255,16 @@
                             "supply_id": "H13825040",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "30/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
+                            "scheduled_date": "09/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 2,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825040",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "13/03/2024",
+                            "scheduled_date": "19/03/2024",
                             "time_of_day": 0,
                             "battery_type": 4,
                             "power_supply_capacity": 4
@@ -273,8 +273,8 @@
                             "supply_id": "H13825040",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "06/03/2024",
-                            "time_of_day": 0,
+                            "scheduled_date": "08/03/2024",
+                            "time_of_day": 1,
                             "battery_type": 4,
                             "power_supply_capacity": 4
                         },
@@ -282,9 +282,9 @@
                             "supply_id": "H13825040",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "03/03/2024",
+                            "scheduled_date": "31/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 1,
+                            "battery_type": 4,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -300,6 +300,198 @@
                     "genes": [
                         {
                             "supply_id": "H13825064",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "10/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825064",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "15/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825064",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 0
+                        },
+                        {
+                            "supply_id": "H13825064",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "26/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 20,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "LEK",
+                        "NAJ",
+                        "POW",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825070",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "07/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825070",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "12/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825070",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825070",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "16/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "POW",
+                        "ZSF",
+                        "LEK",
+                        "JSU"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825086",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "06/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825086",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "08/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825086",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "09/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825086",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "15/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 20,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "ZSF",
+                        "LEK",
+                        "NAJ",
+                        "POW"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825010",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "19/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825010",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "14/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825010",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "31/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825010",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "06/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 10,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "POW",
+                        "NAJ",
+                        "JSU",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825016",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "20/03/2024",
@@ -308,414 +500,31 @@
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825064",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "21/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825064",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 0
-                        },
-                        {
-                            "supply_id": "H13825064",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "LEK",
-                        "NAJ",
-                        "POW",
-                        "ZSF"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825070",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825070",
+                            "supply_id": "H13825016",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "19/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825070",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825070",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "POW",
-                        "ZSF",
-                        "LEK",
-                        "JSU"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825086",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825086",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "19/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825086",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "27/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825086",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "16/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "ZSF",
-                        "LEK",
-                        "NAJ",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825010",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "12/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825010",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "13/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825010",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "04/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825010",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 10,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "POW",
-                        "NAJ",
-                        "JSU",
-                        "ZSF"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825016",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 1,
                             "battery_type": 4,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825016",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825016",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "12/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 0
-                        },
-                        {
-                            "supply_id": "H13825016",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "16/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "LEK",
-                        "ZSF",
-                        "NAJ"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825022",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "13/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825022",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "09/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825022",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "25/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825022",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "21/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "LEK",
-                        "JSU",
-                        "POW",
-                        "ZSF"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825028",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "12/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825028",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "07/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825028",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "09/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825028",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "11/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 10,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "JSU",
-                        "NAJ",
-                        "POW",
-                        "LEK"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825034",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "07/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825034",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "18/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825034",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
-                        },
-                        {
-                            "supply_id": "H13825034",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
                             "time_of_day": 0,
                             "battery_type": 3,
                             "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "ZSF",
-                        "JSU",
-                        "NAJ",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825040",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825040",
+                            "supply_id": "H13825016",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "01/03/2024",
                             "time_of_day": 0,
                             "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825040",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "18/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825040",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
+                            "power_supply_capacity": 0
                         }
                     ]
                 },
@@ -723,46 +532,94 @@
                     "total_expected": 20,
                     "device_type": "DIESEL",
                     "battery_type_list": [
-                        "POW",
-                        "NAJ",
-                        "LEK"
+                        "LEK",
+                        "ZSF",
+                        "NAJ"
                     ],
                     "genes": [
                         {
-                            "supply_id": "H13825046",
+                            "supply_id": "H13825022",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
+                            "scheduled_date": "13/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825022",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "23/03/2024",
                             "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825022",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "21/03/2024",
+                            "time_of_day": 0,
                             "battery_type": 2,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825046",
+                            "supply_id": "H13825022",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "12/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "LEK",
+                        "JSU",
+                        "POW",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825028",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "03/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 7
+                        },
+                        {
+                            "supply_id": "H13825028",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "06/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825028",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "04/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
+                            "time_of_day": 1,
+                            "battery_type": 1,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825046",
+                            "supply_id": "H13825028",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "27/03/2024",
+                            "scheduled_date": "05/03/2024",
                             "time_of_day": 0,
                             "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825046",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
+                            "power_supply_capacity": 0
                         }
                     ]
                 },
@@ -770,46 +627,46 @@
                     "total_expected": 10,
                     "device_type": "DIESEL",
                     "battery_type_list": [
-                        "LEK",
                         "JSU",
+                        "NAJ",
                         "POW",
-                        "ZSF"
+                        "LEK"
                     ],
                     "genes": [
                         {
-                            "supply_id": "H13825052",
+                            "supply_id": "H13825034",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "05/03/2024",
+                            "scheduled_date": "10/03/2024",
                             "time_of_day": 1,
                             "battery_type": 2,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825052",
+                            "supply_id": "H13825034",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "11/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
+                            "time_of_day": 1,
+                            "battery_type": 4,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825052",
+                            "supply_id": "H13825034",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "22/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 0
+                            "scheduled_date": "16/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 2
                         },
                         {
-                            "supply_id": "H13825052",
+                            "supply_id": "H13825034",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "20/03/2024",
+                            "scheduled_date": "17/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 3,
+                            "battery_type": 2,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -818,379 +675,94 @@
                     "total_expected": 20,
                     "device_type": "DIESEL",
                     "battery_type_list": [
+                        "ZSF",
                         "JSU",
-                        "LEK",
                         "NAJ",
-                        "ZSF"
+                        "POW"
                     ],
                     "genes": [
                         {
-                            "supply_id": "H13825058",
+                            "supply_id": "H13825040",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "04/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
+                            "scheduled_date": "30/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825058",
+                            "supply_id": "H13825040",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "18/03/2024",
+                            "scheduled_date": "27/03/2024",
                             "time_of_day": 0,
                             "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825058",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "05/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825058",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "ZSF",
-                        "NAJ",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825064",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "22/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825064",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "11/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825064",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825064",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "09/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "ZSF",
-                        "POW",
-                        "NAJ",
-                        "LEK"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825070",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825070",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825070",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825070",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "LEK",
-                        "NAJ",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825078",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825078",
+                            "supply_id": "H13825040",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "12/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 2,
+                            "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825078",
+                            "supply_id": "H13825040",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "10/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
+                            "scheduled_date": "03/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
                             "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825078",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
                         }
                     ]
                 },
                 {
-                    "total_expected": 15,
+                    "total_expected": 20,
                     "device_type": "DIESEL",
                     "battery_type_list": [
                         "POW",
                         "NAJ",
-                        "JSU",
-                        "ZSF"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825082",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825082",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825082",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "06/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825082",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "05/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 10,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "NAJ",
-                        "ZSF",
-                        "LEK",
-                        "JSU"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825086",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "13/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825086",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825086",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "06/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 0
-                        },
-                        {
-                            "supply_id": "H13825086",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 10,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "ZSF",
-                        "JSU",
                         "LEK"
                     ],
                     "genes": [
                         {
-                            "supply_id": "H13825090",
+                            "supply_id": "H13825046",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825090",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "09/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825090",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "30/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 0
-                        },
-                        {
-                            "supply_id": "H13825090",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "09/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "NAJ",
-                        "ZSF",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825094",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "27/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825094",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
+                            "scheduled_date": "08/03/2024",
                             "time_of_day": 1,
                             "battery_type": 3,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825094",
+                            "supply_id": "H13825046",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "13/03/2024",
+                            "scheduled_date": "11/03/2024",
                             "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825046",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "22/03/2024",
+                            "time_of_day": 0,
                             "battery_type": 4,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825094",
+                            "supply_id": "H13825046",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
+                            "scheduled_date": "17/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 0
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
                         }
                     ]
                 },
@@ -1198,79 +770,80 @@
                     "total_expected": 10,
                     "device_type": "DIESEL",
                     "battery_type_list": [
-                        "POW",
+                        "LEK",
                         "JSU",
+                        "POW",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825052",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "28/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825052",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "12/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 4,
+                            "power_supply_capacity": 10
+                        },
+                        {
+                            "supply_id": "H13825052",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "14/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 0
+                        },
+                        {
+                            "supply_id": "H13825052",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "03/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 9
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 20,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "JSU",
+                        "LEK",
                         "NAJ",
                         "ZSF"
                     ],
                     "genes": [
                         {
-                            "supply_id": "H13825098",
+                            "supply_id": "H13825058",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "06/03/2024",
+                            "scheduled_date": "20/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 5,
+                            "battery_type": 1,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825098",
+                            "supply_id": "H13825058",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "11/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825098",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "19/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 0
-                        },
-                        {
-                            "supply_id": "H13825098",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
-                            "time_of_day": 0,
                             "battery_type": 5,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "LEK",
-                        "JSU",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825102",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "15/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
+                            "power_supply_capacity": 10
                         },
                         {
-                            "supply_id": "H13825102",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "18/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825102",
+                            "supply_id": "H13825058",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "28/03/2024",
@@ -1279,201 +852,628 @@
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825102",
+                            "supply_id": "H13825058",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "10/03/2024",
-                            "time_of_day": 0,
+                            "scheduled_date": "09/03/2024",
+                            "time_of_day": 1,
                             "battery_type": 3,
-                            "power_supply_capacity": 0
+                            "power_supply_capacity": 4
                         }
                     ]
                 },
                 {
-                    "total_expected": 10,
+                    "total_expected": 15,
                     "device_type": "DIESEL",
                     "battery_type_list": [
-                        "JSU",
-                        "POW",
-                        "LEK",
-                        "ZSF"
+                        "ZSF",
+                        "NAJ",
+                        "POW"
                     ],
                     "genes": [
                         {
-                            "supply_id": "H13825106",
+                            "supply_id": "H13825064",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
+                            "scheduled_date": "29/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 4,
+                            "battery_type": 3,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825106",
+                            "supply_id": "H13825064",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "19/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825106",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
+                            "scheduled_date": "28/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825106",
+                            "supply_id": "H13825064",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "31/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825064",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "15/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
+                            "time_of_day": 1,
+                            "battery_type": 5,
                             "power_supply_capacity": 0
                         }
                     ]
                 },
                 {
-                    "total_expected": 10,
+                    "total_expected": 15,
                     "device_type": "DIESEL",
                     "battery_type_list": [
+                        "ZSF",
                         "POW",
-                        "LEK",
-                        "NAJ"
+                        "NAJ",
+                        "LEK"
                     ],
                     "genes": [
                         {
-                            "supply_id": "H13825110",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "30/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825110",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825110",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "27/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 0
-                        },
-                        {
-                            "supply_id": "H13825110",
+                            "supply_id": "H13825070",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "11/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "POW",
-                        "ZSF",
-                        "JSU",
-                        "NAJ"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825114",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "22/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825114",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825114",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "05/03/2024",
-                            "time_of_day": 1,
                             "battery_type": 3,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825114",
+                            "supply_id": "H13825070",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "25/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "JSU",
-                        "POW",
-                        "NAJ",
-                        "ZSF"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825118",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "03/03/2024",
+                            "scheduled_date": "29/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 5
+                        },
+                        {
+                            "supply_id": "H13825070",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "15/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825118",
+                            "supply_id": "H13825070",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "21/03/2024",
                             "time_of_day": 1,
                             "battery_type": 4,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "LEK",
+                        "NAJ",
+                        "POW"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825078",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "05/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 4,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825118",
+                            "supply_id": "H13825078",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
+                            "scheduled_date": "07/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825078",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "02/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825078",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "20/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "POW",
+                        "NAJ",
+                        "JSU",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825082",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "21/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825082",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825082",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "15/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825082",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "14/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 4,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 10,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "NAJ",
+                        "ZSF",
+                        "LEK",
+                        "JSU"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825086",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "18/03/2024",
                             "time_of_day": 0,
                             "battery_type": 2,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825118",
+                            "supply_id": "H13825086",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "22/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 5
+                        },
+                        {
+                            "supply_id": "H13825086",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "20/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 0
+                        },
+                        {
+                            "supply_id": "H13825086",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "07/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 10,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "ZSF",
+                        "JSU",
+                        "LEK"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825090",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "19/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 3
+                        },
+                        {
+                            "supply_id": "H13825090",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "17/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825090",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "20/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 6
+                        },
+                        {
+                            "supply_id": "H13825090",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "10/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 2,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "NAJ",
+                        "ZSF",
+                        "POW"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825094",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "09/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825094",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825094",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "13/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825094",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "05/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 10,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "POW",
+                        "JSU",
+                        "NAJ",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825098",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 2,
+                            "power_supply_capacity": 3
+                        },
+                        {
+                            "supply_id": "H13825098",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "15/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825098",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "30/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 0
+                        },
+                        {
+                            "supply_id": "H13825098",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "23/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "LEK",
+                        "JSU",
+                        "POW"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825102",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "06/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 5
+                        },
+                        {
+                            "supply_id": "H13825102",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "25/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825102",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "18/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825102",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "16/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 10,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "JSU",
+                        "POW",
+                        "LEK",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825106",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "09/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825106",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "02/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 2
+                        },
+                        {
+                            "supply_id": "H13825106",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "08/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 0
+                        },
+                        {
+                            "supply_id": "H13825106",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "12/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 10,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "POW",
+                        "LEK",
+                        "NAJ"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825110",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "01/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 6
+                        },
+                        {
+                            "supply_id": "H13825110",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "27/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825110",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "05/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 8
+                        },
+                        {
+                            "supply_id": "H13825110",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "15/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 20,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "POW",
+                        "ZSF",
+                        "JSU",
+                        "NAJ"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825114",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "25/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 4,
+                            "power_supply_capacity": 9
+                        },
+                        {
+                            "supply_id": "H13825114",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "04/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 2,
+                            "power_supply_capacity": 3
+                        },
+                        {
+                            "supply_id": "H13825114",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "25/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825114",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "03/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 20,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "JSU",
+                        "POW",
+                        "NAJ",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825118",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "24/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825118",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "08/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 10
+                        },
+                        {
+                            "supply_id": "H13825118",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "28/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 10
+                        },
+                        {
+                            "supply_id": "H13825118",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "13/03/2024",
                             "time_of_day": 1,
                             "battery_type": 3,
                             "power_supply_capacity": 4
@@ -1493,227 +1493,84 @@
                             "supply_id": "H13825122",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825122",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825122",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "20/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825122",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "ZSF",
-                        "JSU",
-                        "NAJ",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825126",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825126",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "20/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825126",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "30/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825126",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "JSU",
-                        "NAJ",
-                        "ZSF"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825130",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825130",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "23/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825130",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "22/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825130",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "05/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "JSU",
-                        "NAJ",
-                        "LEK",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825134",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "13/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825134",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "19/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825134",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "10/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825134",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "POW",
-                        "ZSF",
-                        "LEK",
-                        "NAJ"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825138",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
                             "scheduled_date": "24/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825138",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "07/03/2024",
-                            "time_of_day": 0,
                             "battery_type": 3,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825138",
+                            "supply_id": "H13825122",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "17/03/2024",
+                            "scheduled_date": "01/03/2024",
                             "time_of_day": 1,
                             "battery_type": 3,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825138",
+                            "supply_id": "H13825122",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "17/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 10
+                        },
+                        {
+                            "supply_id": "H13825122",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "28/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 9
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "ZSF",
+                        "JSU",
+                        "NAJ",
+                        "POW"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825126",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825126",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "27/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825126",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "15/03/2024",
                             "time_of_day": 1,
                             "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825126",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "28/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -1722,23 +1579,118 @@
                     "total_expected": 15,
                     "device_type": "DIESEL",
                     "battery_type_list": [
-                        "NAJ",
-                        "ZSF",
                         "JSU",
-                        "LEK"
+                        "NAJ",
+                        "ZSF"
                     ],
                     "genes": [
                         {
-                            "supply_id": "H13825140",
+                            "supply_id": "H13825130",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "10/03/2024",
+                            "scheduled_date": "20/03/2024",
                             "time_of_day": 1,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825130",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "08/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825130",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "29/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825130",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "24/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "JSU",
+                        "NAJ",
+                        "LEK",
+                        "POW"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825134",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "31/03/2024",
+                            "time_of_day": 0,
                             "battery_type": 2,
                             "power_supply_capacity": 4
                         },
                         {
-                            "supply_id": "H13825140",
+                            "supply_id": "H13825134",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825134",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "28/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 9
+                        },
+                        {
+                            "supply_id": "H13825134",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "29/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "POW",
+                        "ZSF",
+                        "LEK",
+                        "NAJ"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825138",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "07/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825138",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "17/03/2024",
@@ -1747,21 +1699,69 @@
                             "power_supply_capacity": 4
                         },
                         {
+                            "supply_id": "H13825138",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "13/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 10
+                        },
+                        {
+                            "supply_id": "H13825138",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "10/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "NAJ",
+                        "ZSF",
+                        "JSU",
+                        "LEK"
+                    ],
+                    "genes": [
+                        {
                             "supply_id": "H13825140",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "19/03/2024",
+                            "scheduled_date": "27/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 1,
+                            "battery_type": 2,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825140",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "28/03/2024",
+                            "scheduled_date": "26/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 3,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825140",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "15/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825140",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "23/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -1779,36 +1779,36 @@
                             "supply_id": "H13825142",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825142",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "04/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825142",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825142",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "13/03/2024",
+                            "scheduled_date": "28/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 4,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825142",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "31/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 9
+                        },
+                        {
+                            "supply_id": "H13825142",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "15/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825142",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -1826,17 +1826,8 @@
                             "supply_id": "H13825144",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825144",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "18/03/2024",
-                            "time_of_day": 1,
+                            "scheduled_date": "03/03/2024",
+                            "time_of_day": 0,
                             "battery_type": 2,
                             "power_supply_capacity": 4
                         },
@@ -1844,19 +1835,28 @@
                             "supply_id": "H13825144",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "07/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
+                            "scheduled_date": "25/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825144",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "12/03/2024",
-                            "time_of_day": 1,
+                            "scheduled_date": "23/03/2024",
+                            "time_of_day": 0,
                             "battery_type": 5,
                             "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825144",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "31/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 9
                         }
                     ]
                 },
@@ -1873,25 +1873,16 @@
                             "supply_id": "H13825146",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "28/03/2024",
+                            "scheduled_date": "11/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 5,
+                            "battery_type": 2,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825146",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "18/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825146",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "27/03/2024",
+                            "scheduled_date": "14/03/2024",
                             "time_of_day": 1,
                             "battery_type": 2,
                             "power_supply_capacity": 4
@@ -1900,10 +1891,19 @@
                             "supply_id": "H13825146",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
+                            "scheduled_date": "29/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 5
+                        },
+                        {
+                            "supply_id": "H13825146",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
                             "scheduled_date": "06/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 0
+                            "battery_type": 4,
+                            "power_supply_capacity": 9
                         }
                     ]
                 },
@@ -1916,29 +1916,29 @@
                         "NAJ"
                     ],
                     "genes": [
-                        {
-                            "supply_id": "H13825148",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825148",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "07/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
                         {
                             "supply_id": "H13825148",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "09/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825148",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "19/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825148",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "12/03/2024",
                             "time_of_day": 0,
                             "battery_type": 2,
                             "power_supply_capacity": 4
@@ -1947,9 +1947,9 @@
                             "supply_id": "H13825148",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
+                            "scheduled_date": "17/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 2,
+                            "battery_type": 3,
                             "power_supply_capacity": 4
                         }
                     ]
@@ -1967,212 +1967,13 @@
                             "supply_id": "H13825150",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "22/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825150",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "28/03/2024",
+                            "scheduled_date": "20/03/2024",
                             "time_of_day": 1,
                             "battery_type": 3,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825150",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "11/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825150",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "28/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 15,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "NAJ",
-                        "JSU",
-                        "ZSF",
-                        "POW"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825155",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "28/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825155",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825155",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "25/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825155",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 0
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "LEK",
-                        "NAJ",
-                        "JSU"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825160",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "06/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825160",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "30/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825160",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "03/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825160",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "POW",
-                        "ZSF",
-                        "LEK",
-                        "JSU"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825165",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "02/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 5,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825165",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "10/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825165",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "28/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 1,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825165",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "25/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        }
-                    ]
-                },
-                {
-                    "total_expected": 20,
-                    "device_type": "DIESEL",
-                    "battery_type_list": [
-                        "NAJ",
-                        "POW",
-                        "ZSF"
-                    ],
-                    "genes": [
-                        {
-                            "supply_id": "H13825170",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825170",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "14/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825170",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
                             "scheduled_date": "04/03/2024",
@@ -2181,12 +1982,211 @@
                             "power_supply_capacity": 4
                         },
                         {
+                            "supply_id": "H13825150",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "30/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825150",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "31/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 15,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "NAJ",
+                        "JSU",
+                        "ZSF",
+                        "POW"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825155",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "25/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825155",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "07/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825155",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "10/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825155",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "03/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 0
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 20,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "LEK",
+                        "NAJ",
+                        "JSU"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825160",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "21/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825160",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "23/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 2,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825160",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "27/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825160",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "10/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 20,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "POW",
+                        "ZSF",
+                        "LEK",
+                        "JSU"
+                    ],
+                    "genes": [
+                        {
+                            "supply_id": "H13825165",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "09/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 2,
+                            "power_supply_capacity": 1
+                        },
+                        {
+                            "supply_id": "H13825165",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "08/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 4,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825165",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "14/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825165",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "05/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 9
+                        }
+                    ]
+                },
+                {
+                    "total_expected": 20,
+                    "device_type": "DIESEL",
+                    "battery_type_list": [
+                        "NAJ",
+                        "POW",
+                        "ZSF"
+                    ],
+                    "genes": [
+                        {
                             "supply_id": "H13825170",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "02/03/2024",
+                            "scheduled_date": "08/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825170",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "30/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
+                            "power_supply_capacity": 10
+                        },
+                        {
+                            "supply_id": "H13825170",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "26/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 4,
+                            "battery_type": 5,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825170",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "07/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 3,
                             "power_supply_capacity": 4
                         }
                     ]
@@ -2205,17 +2205,17 @@
                             "supply_id": "H13825175",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "24/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 3,
+                            "scheduled_date": "26/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825175",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "02/03/2024",
-                            "time_of_day": 0,
+                            "scheduled_date": "05/03/2024",
+                            "time_of_day": 1,
                             "battery_type": 1,
                             "power_supply_capacity": 4
                         },
@@ -2223,18 +2223,18 @@
                             "supply_id": "H13825175",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
+                            "scheduled_date": "13/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 3,
+                            "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825175",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
+                            "scheduled_date": "05/03/2024",
                             "time_of_day": 1,
-                            "battery_type": 4,
+                            "battery_type": 1,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -2252,16 +2252,25 @@
                             "supply_id": "H13825180",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "05/03/2024",
+                            "scheduled_date": "16/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 2,
+                            "battery_type": 4,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825180",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "28/03/2024",
+                            "scheduled_date": "13/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825180",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "16/03/2024",
                             "time_of_day": 1,
                             "battery_type": 2,
                             "power_supply_capacity": 4
@@ -2270,18 +2279,9 @@
                             "supply_id": "H13825180",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "11/03/2024",
+                            "scheduled_date": "25/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 2,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825180",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "08/03/2024",
-                            "time_of_day": 0,
-                            "battery_type": 2,
+                            "battery_type": 4,
                             "power_supply_capacity": 4
                         }
                     ]
@@ -2300,25 +2300,25 @@
                             "supply_id": "H13825185",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "31/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 2,
+                            "scheduled_date": "17/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825185",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "10/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 3,
+                            "scheduled_date": "04/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
                             "power_supply_capacity": 4
                         },
                         {
                             "supply_id": "H13825185",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "10/03/2024",
+                            "scheduled_date": "06/03/2024",
                             "time_of_day": 0,
                             "battery_type": 1,
                             "power_supply_capacity": 4
@@ -2327,9 +2327,9 @@
                             "supply_id": "H13825185",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
+                            "scheduled_date": "11/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 5,
                             "power_supply_capacity": 0
                         }
                     ]
@@ -2347,7 +2347,25 @@
                             "supply_id": "H13825190",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "26/03/2024",
+                            "scheduled_date": "06/03/2024",
+                            "time_of_day": 1,
+                            "battery_type": 1,
+                            "power_supply_capacity": 7
+                        },
+                        {
+                            "supply_id": "H13825190",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "23/03/2024",
+                            "time_of_day": 0,
+                            "battery_type": 1,
+                            "power_supply_capacity": 4
+                        },
+                        {
+                            "supply_id": "H13825190",
+                            "start_date": "01/03/2024",
+                            "end_date": "31/03/2024",
+                            "scheduled_date": "13/03/2024",
                             "time_of_day": 1,
                             "battery_type": 5,
                             "power_supply_capacity": 4
@@ -2356,26 +2374,8 @@
                             "supply_id": "H13825190",
                             "start_date": "01/03/2024",
                             "end_date": "31/03/2024",
-                            "scheduled_date": "20/03/2024",
+                            "scheduled_date": "07/03/2024",
                             "time_of_day": 0,
-                            "battery_type": 3,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825190",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "06/03/2024",
-                            "time_of_day": 1,
-                            "battery_type": 4,
-                            "power_supply_capacity": 4
-                        },
-                        {
-                            "supply_id": "H13825190",
-                            "start_date": "01/03/2024",
-                            "end_date": "31/03/2024",
-                            "scheduled_date": "29/03/2024",
-                            "time_of_day": 1,
                             "battery_type": 1,
                             "power_supply_capacity": 0
                         }

@@ -184,7 +184,6 @@ class GeneticOperators:
         total_fitness = w1 * deadline_violation + w2 * battery_type_violation
         
         return total_fitness
-
     def _crossover_calculation(
         self,
         gen_1: Gene,
@@ -390,3 +389,4 @@ class GeneticOperators:
                 battery_type_random - battery_type
             )
         return round(new_battery_type)
+

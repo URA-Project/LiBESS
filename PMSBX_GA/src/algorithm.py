@@ -61,10 +61,7 @@ class PmsbxGaAlgorithm:
             # Thu thập dữ liệu ban đầu
             for i, individual in enumerate(ga.population.individuals):
                 ga.calculate_fitness(individual, self.resource)
-                self.chroms_obj[i] = [
-                    individual.deadline_violation,
-                    individual.battery_type_violation
-                ]
+                self.chroms_obj[i] = ga.calculate_fitness(individual, self.resource)
                 
         else:
             ga = pmsbx_ga.GeneticOperators(self.supply_orders)
@@ -192,10 +189,7 @@ class PmsbxGaAlgorithm:
                 self.chroms_obj.clear()  # Xóa dữ liệu cũ
                 for i, individual in enumerate(ga.population.individuals):
                     ga.calculate_fitness(individual, self.resource)
-                    self.chroms_obj[i] = [
-                        individual.deadline_violation,
-                        individual.battery_type_violation
-                    ]
+                    self.chroms_obj[i] = ga.calculate_fitness(individual, self.resource)
                 
                 # Lưu pareto data mỗi 50 generations
                 if generation % SAVE_INTERVAL == 0:
