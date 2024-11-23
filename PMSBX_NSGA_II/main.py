@@ -37,8 +37,7 @@ def main_pmsbx_nsga():
         is_load_data,
     )
     pmsbx_nsga_algorithm.run_algorithm()
-
-
+    
 if __name__ == "__main__":
     Utils.print_current_time("Start")
     main_pmsbx_nsga()
