@@ -1,0 +1,10 @@
+Generation 0: 53
+Generation 1: 53
+Generation 2: 53
+Generation 3: 48
+Generation 4: 48
+Generation 5: 45
+Generation 6: 44
+Generation 7: 40
+Generation 8: 40
+Generation 9: 40
