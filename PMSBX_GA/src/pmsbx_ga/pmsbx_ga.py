@@ -164,7 +164,7 @@ class GeneticOperators:
                         deadline_violation += 1
                     else:
                         genes_scheduled_dates.add(date_battery_pair)
-                # Kiểm tra xem vào thời điểm buổi sáng/chiều trong schedule date có pin cung cấp không
+                # Kiểm tra xem vào thởi điểm buổi sáng/chiều trong schedule date có pin cung cấp không
                 diesel_morning, diesel_afternoon = Utils.get_diesel_schedule(scheduled_date_string, battery_type_string, resource)
                 # Morning
                 if time_of_date == 0:
@@ -184,6 +184,18 @@ class GeneticOperators:
         total_fitness = w1 * deadline_violation + w2 * battery_type_violation
         
         return total_fitness
+
+    def export_violations(self, individual: Individual, generation: int):
+        """Export deadline and battery type violations for the best individual"""
+        deadline_file = "pmsbx_deadline_violations.txt"
+        battery_file = "pmsbx_battery_violations.txt"
+        
+        with open(deadline_file, "a") as f:
+            f.write(f"Generation {generation}: {individual.deadline_violation}\n")
+            
+        with open(battery_file, "a") as f:
+            f.write(f"Generation {generation}: {individual.battery_type_violation}\n")
+
     def _crossover_calculation(
         self,
         gen_1: Gene,
@@ -389,4 +401,3 @@ class GeneticOperators:
                 battery_type_random - battery_type
             )
         return round(new_battery_type)
-

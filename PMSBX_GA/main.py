@@ -24,7 +24,7 @@ def main_pmsbx_ga():
         battery_type=5
     )
     tournament_size = 7
-    num_generations = 1000
+    num_generations = 10
     is_load_data = False
 
     # Initialize and run algorithm

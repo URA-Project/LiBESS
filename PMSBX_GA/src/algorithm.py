@@ -89,6 +89,10 @@ class PmsbxGaAlgorithm:
                 print(f"Worst Fitness: {max(population_fitnesses):.2f}")
                 print(f"Fitness Variance: {np.var(population_fitnesses):.2f}")
 
+                # Export violations for best individual
+                best_ind = ga.population.individuals[np.argmin(population_fitnesses)]
+                ga.export_violations(best_ind, generation)
+
                 # Selection with debug
                 parents = ga.select_mating_pool(ga.population, self.num_parents_mating)
                 parent_fitnesses = [ga.calculate_fitness(p, self.resource) for p in parents.individuals]

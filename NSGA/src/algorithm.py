@@ -89,6 +89,14 @@ class NsgaAlgorithm:  # Đổi tên class để phản ánh việc sử dụng N
                         - Overall Best Fitness: {best_fitness}
                         - Improvement: {prev_best_fitness - best_fitness if prev_best_fitness != float('inf') else 0}
                     """)
+
+                    # Export violations for best individual
+                    best_idx = np.argmin(population_fitnesses)
+                    best_ind = nsga_algorithm.population.individuals[best_idx]
+                    nsga_algorithm.export_violations(best_ind, index)
+
+                    # Export Pareto front
+                    nsga_algorithm.export_pareto_front(nsga_algorithm.population, index)
                 
                 # Selection
                 parents = nsga_algorithm.select_mating_pool(nsga_algorithm.population, self.num_parents_mating)

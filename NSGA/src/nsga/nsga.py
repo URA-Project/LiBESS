@@ -331,3 +331,23 @@ class GeneticOperators:
             front_num += 1
 
         return new_population, new_chroms_obj
+
+    def export_violations(self, individual: Individual, generation: int):
+        """Export deadline and battery type violations for the best individual"""
+        deadline_file = "nsga_deadline_violations.txt"
+        battery_file = "nsga_battery_violations.txt"
+        
+        with open(deadline_file, "a") as f:
+            f.write(f"Generation {generation}: {individual.deadline_violation}\n")
+            
+        with open(battery_file, "a") as f:
+            f.write(f"Generation {generation}: {individual.battery_type_violation}\n")
+
+    def export_pareto_front(self, population: Population, generation: int):
+        """Export the Pareto front of the current population"""
+        pareto_file = "nsga_pareto_front.txt"
+        
+        with open(pareto_file, "a") as f:
+            f.write(f"\nGeneration {generation} Pareto Front:\n")
+            for ind in population.individuals:
+                f.write(f"Deadline violations: {ind.deadline_violation}, Battery violations: {ind.battery_type_violation}\n")

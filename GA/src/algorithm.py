@@ -85,6 +85,10 @@ class GaAlgorithm:
                 print(f"Worst Fitness: {max(population_fitnesses):.2f}")
                 print(f"Fitness Variance: {np.var(population_fitnesses):.2f}")
 
+                # Export violations for best individual
+                best_ind = ga_operator.population.individuals[np.argmin(population_fitnesses)]
+                ga_operator.export_violations(best_ind, generation)
+
                 # Selection with debug
                 parents = ga_operator.select_mating_pool(ga_operator.population, self.num_parents_mating)
                 parent_fitnesses = [ga_operator.calculate_fitness(p, self.resource) 

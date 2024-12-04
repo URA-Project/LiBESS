@@ -73,6 +73,17 @@ class GeneticOperators:
         
         return offspring
 
+    def export_violations(self, individual: Individual, generation: int):
+        """Export deadline and battery type violations for the best individual"""
+        deadline_file = "ga_deadline_violations.txt"
+        battery_file = "ga_battery_violations.txt"
+        
+        with open(deadline_file, "a") as f:
+            f.write(f"Generation {generation}: {individual.deadline_violation}\n")
+            
+        with open(battery_file, "a") as f:
+            f.write(f"Generation {generation}: {individual.battery_type_violation}\n")
+
     def calculate_fitness(self, individual: Individual, resource):
         deadline_violation = 0
         battery_type_violation = 0

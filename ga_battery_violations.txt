@@ -1,0 +1,10 @@
+Generation 0: 0
+Generation 1: 0
+Generation 2: 0
+Generation 3: 5
+Generation 4: 5
+Generation 5: 7
+Generation 6: 8
+Generation 7: 13
+Generation 8: 13
+Generation 9: 13
